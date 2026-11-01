@@ -1,7 +1,7 @@
 import { pickIndependent, type Miner } from "./telegraph/independence.ts";
 
 const NODE = process.env.TELEGRAPH_NODE_URL ?? "https://devnode.telegraphprotocol.com";
-const intent = process.argv[2] ?? "EVENT_OUTCOME_RESOLUTION";
+const intent = process.argv[2] ?? "EVENT_OUTCOME_RESOLUTION_GENERAL";
 
 const res = await fetch(`${NODE}/engine/v1/intents/${intent}/miners`, {
   signal: AbortSignal.timeout(20_000),
