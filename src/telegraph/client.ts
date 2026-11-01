@@ -37,16 +37,11 @@ export function createAsker(privateKey: `0x${string}`) {
     },
   });
 
-  return async function ask(
-    intent: string,
-    params: Record<string, unknown>,
-    minerId?: string,
-  ): Promise<AskResult> {
-    const path = minerId ? `/engine/v1/ask/${minerId}` : "/engine/v1/ask";
+  async function post(path: string, payload: unknown): Promise<AskResult> {
     const res = await paidFetch(NODE + path, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ intent, params }),
+      body: JSON.stringify(payload),
     });
     const body = (await res.json()) as Record<string, unknown>;
     const header = res.headers.get("x-telegraph-receipt");
@@ -54,6 +49,14 @@ export function createAsker(privateKey: `0x${string}`) {
       ? (JSON.parse(Buffer.from(header, "base64").toString()) as Receipt)
       : null;
     return { status: res.status, body, receipt };
+  }
+
+  return {
+    ask: (intent: string, params: Record<string, unknown>, minerId?: string) =>
+      post(minerId ? `/engine/v1/ask/${minerId}` : "/engine/v1/ask", { intent, params }),
+    /** Calls a provider's own endpoint with its own parameters. */
+    askNative: (minerId: string, endpoint: string, payload: Record<string, unknown>) =>
+      post(`/engine/v1/ask/${minerId}`, { method: "GET", endpoint, payload }),
   };
 }
 
