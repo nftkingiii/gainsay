@@ -5,6 +5,9 @@ const GAMMA = "https://gamma-api.polymarket.com";
 export interface Market {
   id: string;
   question: string;
+  slug?: string;
+  sportsMarketType?: string;
+  line?: number | string | null;
   questionID?: string;
   negRiskRequestID?: string;
   gameStartTime?: string;
@@ -19,6 +22,10 @@ async function getJson(path: string): Promise<unknown> {
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`gamma ${res.status} on ${path}`);
   return res.json();
+}
+
+export async function marketById(id: string): Promise<Market | null> {
+  return (await getJson(`/markets/${encodeURIComponent(id)}`)) as Market | null;
 }
 
 export async function findMarket(lookup: Lookup): Promise<Market | null> {
