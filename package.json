@@ -12,7 +12,8 @@
     "test": "tsx --test test/*.test.ts",
     "typecheck": "tsc --noEmit",
     "ask": "tsx src/ask.ts",
-    "check": "tsx src/check.ts"
+    "check": "tsx src/check.ts",
+    "scan": "tsx src/scan.ts"
   },
   "dependencies": {
     "@x402/evm": "2.28.0",
