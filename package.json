@@ -1,0 +1,21 @@
+{
+  "name": "gainsay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "watch": "tsx src/watch.ts",
+    "providers": "tsx src/providers.ts",
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "viem": "2.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.7.0",
+    "tsx": "4.19.0",
+    "typescript": "5.6.2"
+  }
+}
