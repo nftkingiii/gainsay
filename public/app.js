@@ -162,8 +162,9 @@ const STATUS = {
 
 async function loadFeed() {
   try {
-    const { counts, entries } = await (await fetch("/api/feed")).json();
-    $("feed-meta").textContent = `${counts.seen} proposals read since start · ${counts.notPolymarket} from other platforms refused · ${entries.length} Polymarket markets shown`;
+    const { counts, entries: all } = await (await fetch("/api/feed")).json();
+    const entries = $("covered-only").checked ? all.filter((e) => e.coverage === "covered") : all;
+    $("feed-meta").textContent = `${counts.seen} proposals read since start · ${counts.notPolymarket} from other platforms refused · ${entries.length} shown`;
     $("feed").innerHTML = entries.length
       ? entries
           .map((e) => {
@@ -176,7 +177,7 @@ async function loadFeed() {
               ${status}</button></li>`;
           })
           .join("")
-      : `<li class="empty">Waiting for proposals. They arrive in bursts after games finish.</li>`;
+      : `<li class="empty">${$("covered-only").checked ? "No settleable markets in the window right now. NHL, NBA, MLB and top football games arrive after they finish." : "Waiting for proposals. They arrive in bursts after games finish."}</li>`;
     for (const b of $("feed").querySelectorAll("[data-id]")) {
       b.addEventListener("click", () => {
         $("market").value = b.dataset.id;
@@ -188,6 +189,7 @@ async function loadFeed() {
     $("feed-meta").textContent = "The feed is unavailable right now.";
   }
 }
+$("covered-only").addEventListener("change", loadFeed);
 setInterval(() => {
   if (!$("panel-watch").hidden) loadFeed();
 }, 20000);

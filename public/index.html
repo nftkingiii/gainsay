@@ -38,7 +38,10 @@
     <section id="panel-watch" role="tabpanel" aria-labelledby="tab-watch" hidden>
       <h1>Proposals in their challenge window.</h1>
       <p class="lede">Every Polymarket resolution proposed on UMA's oracle, read straight from Polygon. Markets Gainsay can settle are checked against the final score.</p>
-      <div class="feed-meta" id="feed-meta"></div>
+      <div class="feed-tools">
+        <span class="feed-meta" id="feed-meta">Loading proposals…</span>
+        <label class="toggle"><input type="checkbox" id="covered-only"> Only markets Gainsay can settle</label>
+      </div>
       <ol class="feed" id="feed"></ol>
     </section>
 
