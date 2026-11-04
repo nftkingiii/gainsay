@@ -125,3 +125,9 @@ test("settles spreads from the first outcome's line", () => {
   assert.equal(decide(spread("-3.5", '["76ers", "Knicks"]'), 1, [knicksGame], after).verdict, "holds");
   assert.equal(decide(spread("-7.5", '["76ers", "Knicks"]'), 0, [knicksGame], after).verdict, "holds");
 });
+
+test("with no proposal yet, reports the outcome the score supports", () => {
+  const verdict = decide(market({}), null, [knicksGame], after);
+  assert.equal(verdict.verdict, "settled");
+  assert.equal(verdict.expected, 0);
+});

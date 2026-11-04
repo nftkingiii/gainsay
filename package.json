@@ -7,6 +7,7 @@
     "node": ">=22"
   },
   "scripts": {
+    "start": "tsx src/server.ts",
     "watch": "tsx src/watch.ts",
     "providers": "tsx src/providers.ts",
     "test": "tsx --test test/*.test.ts",

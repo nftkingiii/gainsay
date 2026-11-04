@@ -1,7 +1,13 @@
 import type { Evidence } from "./evidence.ts";
 import type { GameMarket } from "./market.ts";
 
-export type VerdictName = "too_early" | "holds" | "wrong" | "contested" | "no_independent_source";
+export type VerdictName =
+  | "too_early"
+  | "holds"
+  | "wrong"
+  | "settled"
+  | "contested"
+  | "no_independent_source";
 
 export interface Rejection {
   evidence: Evidence;
@@ -79,9 +85,10 @@ function expectedFrom(market: GameMarket, e: Evidence): 0 | 1 | null {
   }
 }
 
+/** With no proposal yet, a clear result is reported as `settled`: what a proposer should propose. */
 export function decide(
   market: GameMarket,
-  proposedValue: number,
+  proposedValue: number | null,
   evidence: Evidence[],
   now: Date,
 ): Verdict {
@@ -116,6 +123,7 @@ export function decide(
   if (expectations.size > 1) return result("contested", null, "sources disagree on the outcome");
   const [expected = null] = expectations;
   if (expected === null) return result("contested", null, "the score gives no clear outcome");
+  if (proposedValue === null) return result("settled", expected, "the final score decides this market");
   return expected === proposedValue
     ? result("holds", expected, "the final score supports this proposal")
     : result("wrong", expected, "the final score contradicts this proposal");

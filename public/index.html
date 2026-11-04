@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gainsay</title>
+  <meta name="description" content="Independent evidence on a Polymarket resolution before anyone posts a bond, bought through Telegraph.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,560&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/mark.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="bar">
+    <a class="wordmark" href="/" aria-label="Gainsay home"><img src="/mark.svg" alt="" width="22" height="22">Gainsay</a>
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <button role="tab" id="tab-check" aria-controls="panel-check" aria-selected="true">Check</button>
+      <button role="tab" id="tab-watch" aria-controls="panel-watch" aria-selected="false" tabindex="-1">Watch</button>
+      <button role="tab" id="tab-how" aria-controls="panel-how" aria-selected="false" tabindex="-1">How it works</button>
+    </nav>
+    <span class="net" id="net" title="Telegraph evidence is paid on Ethereum Sepolia testnet with test USDC">Testnet</span>
+  </header>
+
+  <main>
+    <section id="panel-check" role="tabpanel" aria-labelledby="tab-check">
+      <h1>Check a resolution before the bond goes up.</h1>
+      <p class="lede">Paste a Polymarket market. Gainsay buys the final score from independent providers through Telegraph and tells you which outcome it supports, with a receipt for every answer.</p>
+      <form id="check-form" class="ask" autocomplete="off">
+        <label for="market" class="sr">Polymarket market link or id</label>
+        <input id="market" name="market" type="text" inputmode="url" placeholder="polymarket.com/event/… or a market id" required>
+        <button type="submit" id="check-button">Check</button>
+      </form>
+      <p class="hint" id="paid-note"></p>
+      <div id="result" aria-live="polite"></div>
+    </section>
+
+    <section id="panel-watch" role="tabpanel" aria-labelledby="tab-watch" hidden>
+      <h1>Proposals in their challenge window.</h1>
+      <p class="lede">Every Polymarket resolution proposed on UMA's oracle, read straight from Polygon. Markets Gainsay can settle are checked against the final score.</p>
+      <div class="feed-meta" id="feed-meta"></div>
+      <ol class="feed" id="feed"></ol>
+    </section>
+
+    <section id="panel-how" role="tabpanel" aria-labelledby="tab-how" hidden>
+      <h1>Evidence, not opinion.</h1>
+      <ol class="steps">
+        <li><h2>Read the proposal</h2><p>Gainsay listens to UMA's managed oracle on Polygon and maps each proposal to its Polymarket market. Requests from other platforms using the same oracle are refused, not guessed.</p></li>
+        <li><h2>Buy the final score</h2><p>It pays a Telegraph provider for the result, using each provider's own parameters. Providers that only repeat a prediction market's own answer are excluded.</p></li>
+        <li><h2>Reject the wrong game</h2><p>An answer counts only if it names the same teams and a kickoff within three hours of the market's. In testing, paid answers came back about other games with every field marked ok. Gainsay rejects those.</p></li>
+        <li><h2>Settle it by arithmetic</h2><p>Winners, totals and spreads are computed from the score, not read from a model. A push, a draw or disagreeing sources come back as contested.</p></li>
+      </ol>
+      <h2 class="limits-title">What it does not do yet</h2>
+      <ul class="limits">
+        <li>Player props, quarters and halves need box scores that no Telegraph provider serves yet.</li>
+        <li>Most leagues have one working source today, and every verdict says so.</li>
+        <li>Gainsay never proposes, disputes or posts a bond. You decide.</li>
+        <li>Evidence is paid on Ethereum Sepolia testnet with test USDC. UMA proposals are real Polygon mainnet data.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    Evidence bought through <a href="https://anjoman.ai/docs" rel="noopener">Telegraph</a> · Proposals from UMA on Polygon · Not affiliated with Polymarket
+  </footer>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
