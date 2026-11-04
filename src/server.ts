@@ -90,7 +90,7 @@ const server = createServer(async (req, res) => {
     if (!file.startsWith(normalize(PUBLIC)) || !TYPES[extname(file)]) return json(res, 404, { error: "not found" });
     const content = await readFile(file).catch(() => null);
     if (!content) return json(res, 404, { error: "not found" });
-    res.writeHead(200, { "content-type": TYPES[extname(file)]! });
+    res.writeHead(200, { "content-type": TYPES[extname(file)]!, "cache-control": "no-cache" });
     res.end(content);
   } catch (error) {
     console.error((error as Error).message);
