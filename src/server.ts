@@ -7,7 +7,7 @@ import { createFeed } from "./service/feed.ts";
 import { createAsker } from "./telegraph/client.ts";
 
 const env = process.env;
-const key = env.GAINSAY_EVM_PRIVATE_KEY as `0x${string}` | undefined;
+const key = env.GAINSAY_EVM_PRIVATE_KEY?.trim() as `0x${string}` | undefined;
 const dailyBudgetUsd = Number(env.GAINSAY_DAILY_BUDGET_USD ?? "0");
 
 const checker = createChecker({ asker: key ? createAsker(key) : null, dailyBudgetUsd });
