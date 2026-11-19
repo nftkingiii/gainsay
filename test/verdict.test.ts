@@ -131,3 +131,42 @@ test("with no proposal yet, reports the outcome the score supports", () => {
   assert.equal(verdict.verdict, "settled");
   assert.equal(verdict.expected, 0);
 });
+
+// Dated SportWire answer, fetched 2026-11-19 from the provider behind miner 7330: date only, no tip-off time.
+const datedRaw = JSON.parse(readFileSync(new URL("./fixtures/sportwire-score-dated.json", import.meta.url), "utf8")) as Record<string, unknown>;
+const datedMeta = { minerId: "7330", signalHash: "fixture", receiptHash: null, costUsd: 0.01 };
+const twolvesRockets = market({
+  question: "Timberwolves vs. Rockets: O/U 196.5",
+  slug: "nba-min-hou-2026-11-04",
+  sportsMarketType: "totals",
+  line: 196.5,
+  gameStartTime: "2026-11-05 01:00:00+00",
+  outcomes: '["Over", "Under"]',
+});
+const afterTwolves = new Date("2026-11-06T00:00:00Z");
+
+test("a dated answer is accepted on the market's local game day", () => {
+  const e = fromSportwire(datedRaw, datedMeta)!;
+  assert.equal(e.kickoff, null);
+  assert.equal(e.gameDate, "2026-11-04");
+  assert.equal(e.source, "sportwire:english wikipedia");
+  const verdict = decide(twolvesRockets, 1, [e], afterTwolves);
+  assert.equal(verdict.verdict, "holds", verdict.note);
+  assert.equal(verdict.accepted.length, 1);
+});
+
+test("a dated answer for another day is rejected, not read as this game", () => {
+  const e = { ...fromSportwire(datedRaw, datedMeta)!, gameDate: "2026-11-16" };
+  const verdict = decide(twolvesRockets, 1, [e], afterTwolves);
+  assert.equal(verdict.verdict, "no_independent_source");
+  assert.match(verdict.rejected[0]!.reason, /2026-11-16/);
+});
+
+test("NBA markets ask miner 7330 for the dated game, never a team-only latest game", async () => {
+  const { requestsFor } = await import("../src/verdict/route.ts");
+  const [req] = requestsFor(twolvesRockets);
+  assert.equal(req!.minerId, "7330");
+  assert.equal(req!.endpoint, "/score");
+  assert.deepEqual(Object.keys(req!.payload), ["question"]);
+  assert.match(String(req!.payload.question), /Timberwolves vs Rockets, NBA, 2026-11-04/);
+});

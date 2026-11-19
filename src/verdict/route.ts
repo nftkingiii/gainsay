@@ -1,5 +1,6 @@
 import { fromMlbOfficial, fromNhlOfficial, fromSportwire, type Evidence } from "./evidence.ts";
 import type { GameMarket } from "./market.ts";
+import { localDate } from "./engine.ts";
 
 export interface Request {
   label: string;
@@ -10,6 +11,7 @@ export interface Request {
 }
 
 const SPORTWIRE_LEAGUES = new Set(["nba", "laliga", "epl"]);
+const LEAGUE_LABEL: Record<string, string> = { nba: "NBA", laliga: "LaLiga", epl: "Premier League" };
 
 /** Providers proven through paid calls. Leagues without one return no requests. */
 export function requestsFor(market: GameMarket): Request[] {
@@ -38,12 +40,15 @@ export function requestsFor(market: GameMarket): Request[] {
     ];
   }
   if (SPORTWIRE_LEAGUES.has(market.league)) {
+    // Ask for the dated game. A team-only ask returns that team's latest game, which is the wrong
+    // one for any market but the most recent (#177); 7331's /game no longer resolves dated asks.
+    const question = `${market.teams.join(" vs ")}, ${LEAGUE_LABEL[market.league]}, ${localDate(market.kickoff, market.league)}, final score`;
     return [
       {
-        label: "SportWire (ESPN)",
-        minerId: "7331",
-        endpoint: "/game",
-        payload: { team: market.teams[0], league: market.league },
+        label: "SportWire score, dated",
+        minerId: "7330",
+        endpoint: "/score",
+        payload: { question },
         read: (result, meta) => {
           const evidence = fromSportwire(result as Record<string, unknown>, meta);
           return evidence ? [evidence] : [];

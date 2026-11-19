@@ -1,0 +1,63 @@
+{
+ "summary": "Houston Rockets 107-117 Minnesota Timberwolves on 2026-11-04 (final). Winner: Minnesota Timberwolves. Home final score: 107 points; away final score: 117 points.",
+ "intent": "SPORTS_SCORE_GENERAL",
+ "league": "NBA",
+ "league_name": "NBA",
+ "date": "2026-11-04",
+ "home_team": "Houston Rockets",
+ "away_team": "Minnesota Timberwolves",
+ "home_score": 107,
+ "away_score": 117,
+ "score_unit": "points",
+ "status": "Final",
+ "state": "post",
+ "final": true,
+ "finished": true,
+ "live": false,
+ "winner": "Minnesota Timberwolves",
+ "start_time": null,
+ "time_precision": "date",
+ "source": "English Wikipedia",
+ "source_url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Minnesota_Timberwolves_season",
+ "source_match_id": "0022600181",
+ "overtime_periods": 0,
+ "competition_key": "nba",
+ "draw": false,
+ "match_draw": false,
+ "in_play": false,
+ "sources": [
+  {
+   "name": "English Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/National_Basketball_Association",
+   "license": "CC BY-SA 4.0",
+   "revision": 1386549551,
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+   "name": "English Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Minnesota_Timberwolves_season",
+   "license": "CC BY-SA 4.0",
+   "revision": 1386578196,
+   "fetched_at": "2026-11-19T17:01:24.093Z",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+   "name": "English Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_Houston_Rockets_season",
+   "license": "CC BY-SA 4.0",
+   "revision": 1386578178,
+   "fetched_at": "2026-11-19T17:01:24.093Z",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  }
+ ],
+ "confidence": 0.93,
+ "attribution": "English Wikipedia: https://en.wikipedia.org/wiki/National_Basketball_Association; CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/); revision 1386549551. Scores and fields extracted by SportWire. English Wikipedia: https://en.wikipedia.org/wiki/2026%E2%80%9327_Minnesota_Timberwolves_season; CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/); revision 1386578196. Scores and fields extracted by SportWire. English Wikipedia: https://en.wikipedia.org/wiki/2026%E2%80%9327_Houston_Rockets_season; CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/); revision 1386578178. Scores and fields extracted by SportWire.",
+ "as_of": "2026-11-19T17:01:24.148Z",
+ "supported": true,
+ "kickoff": null,
+ "selection": "exact_dated_fixture",
+ "source_fetched_at": "2026-11-19T17:01:24.093Z",
+ "cross_table_status": "agree",
+ "independent_source_agreement": false,
+ "completion_basis": "Both team-season logs agree on gameday, designated sides, final points, overtime and completed win/loss marker; game IDs agree where both are published. No live clock or tip-off time is claimed."
+}

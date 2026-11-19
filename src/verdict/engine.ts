@@ -28,6 +28,21 @@ export interface Verdict {
 
 const KICKOFF_TOLERANCE_MS = 3 * 60 * 60 * 1000;
 
+/** The time zone each league dates its games in. */
+const LEAGUE_ZONE: Record<string, string> = {
+  nba: "America/New_York",
+  nfl: "America/New_York",
+  mlb: "America/New_York",
+  nhl: "America/New_York",
+  epl: "Europe/London",
+  laliga: "Europe/Madrid",
+};
+
+/** YYYY-MM-DD of an instant in the league's home time zone. */
+export function localDate(at: Date, league: string): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: LEAGUE_ZONE[league] ?? "UTC", year: "numeric", month: "2-digit", day: "2-digit" }).format(at);
+}
+
 const words = (name: string) =>
   name
     .toLowerCase()
@@ -48,6 +63,11 @@ function rejectionFor(market: GameMarket, e: Evidence): string | null {
     if (!sameTeam(team, e.home) && !sameTeam(team, e.away)) {
       return `answer is about ${e.away} at ${e.home}, not ${market.teams.join(" v ")}`;
     }
+  }
+  if (!e.kickoff && e.gameDate) {
+    // Date-only answers: the game must fall on the market's local calendar day, where the league files it.
+    const local = localDate(market.kickoff, market.league);
+    return e.gameDate === local ? null : `answer is for a game on ${e.gameDate}, not ${local}`;
   }
   if (!e.kickoff) return "answer has no kickoff time, so the game cannot be confirmed";
   if (Math.abs(e.kickoff.getTime() - market.kickoff.getTime()) > KICKOFF_TOLERANCE_MS) {

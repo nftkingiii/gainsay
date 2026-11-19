@@ -7,6 +7,8 @@ export interface Evidence {
   awayScore: number;
   finished: boolean;
   kickoff: Date | null;
+  /** Local calendar date (YYYY-MM-DD) for answers that give a date but no tip-off time. */
+  gameDate?: string;
   signalHash: string;
   receiptHash: string | null;
   costUsd: number;
@@ -15,18 +17,20 @@ export interface Evidence {
 type Meta = Pick<Evidence, "minerId" | "signalHash" | "receiptHash" | "costUsd">;
 
 export function fromSportwire(result: Record<string, unknown>, meta: Meta): Evidence | null {
-  const { home_team, away_team, home_score, away_score, finished, kickoff } = result;
+  const { home_team, away_team, home_score, away_score, finished, kickoff, date, source } = result;
   if (typeof home_team !== "string" || typeof away_team !== "string") return null;
   if (typeof home_score !== "number" || typeof away_score !== "number") return null;
   return {
     ...meta,
-    source: "espn",
+    // The provider has switched upstreams (ESPN, then Wikipedia season logs), so name what it reports.
+    source: typeof source === "string" && source ? `sportwire:${source.toLowerCase()}` : "sportwire",
     home: home_team,
     away: away_team,
     homeScore: home_score,
     awayScore: away_score,
     finished: finished === true,
     kickoff: typeof kickoff === "string" ? new Date(kickoff) : null,
+    gameDate: typeof date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : undefined,
   };
 }
 
