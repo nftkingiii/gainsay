@@ -93,3 +93,27 @@ export function fromMlbOfficial(result: { dates?: MlbDay[] }, meta: Meta): Evide
     }),
   );
 }
+
+interface TakarScores {
+  home?: { team?: string; score?: number };
+  away?: { team?: string; score?: number };
+  finished?: boolean;
+  kickoff?: string | null;
+}
+
+/** Takar Outcome (miner 20261117) reads ESPN's scoreboard by code and returns the score in data.scores. */
+export function fromTakarOutcome(result: { data?: { scores?: TakarScores } }, meta: Meta): Evidence | null {
+  const s = result?.data?.scores;
+  if (!s?.home?.team || !s.away?.team) return null;
+  if (typeof s.home.score !== "number" || typeof s.away.score !== "number") return null;
+  return {
+    ...meta,
+    source: "takar-outcome:espn",
+    home: s.home.team,
+    away: s.away.team,
+    homeScore: s.home.score,
+    awayScore: s.away.score,
+    finished: s.finished === true,
+    kickoff: typeof s.kickoff === "string" ? new Date(s.kickoff) : null,
+  };
+}

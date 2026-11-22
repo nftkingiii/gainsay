@@ -1,0 +1,27 @@
+{
+  "note": "Real paid native ask to Takar Outcome (miner 20261117) through the Telegraph node, recorded 2026-11-22 (Ethereum Sepolia, $0.01 test USDC).",
+  "miner_id": "20261117",
+  "signal_hash": "0xe8424ce5a626661442e8052cfe9e20650ad66ca32389503a2e52de7a63ce080f",
+  "result": {
+    "event": "What was the final score of Kansas City Chiefs vs Philadelphia Eagles on 2025-02-09 (NFL)?",
+    "outcome": "unresolved",
+    "winner": "Philadelphia Eagles",
+    "evidence": "ESPN scoreboard, 2025-02-09: Kansas City Chiefs 22, Philadelphia Eagles 40 (Final).",
+    "sources": ["https://www.espn.com/nfl/game/_/gameId/401671889/chiefs-eagles"],
+    "note": "not a yes/no question: the final score is in data.scores",
+    "data": {
+      "league": "football/nfl",
+      "game": "401671889",
+      "ask": { "kind": "score" },
+      "scores": {
+        "home": { "team": "Philadelphia Eagles", "score": 40 },
+        "away": { "team": "Kansas City Chiefs", "score": 22 },
+        "finished": true,
+        "status": "STATUS_FINAL",
+        "detail": "Final",
+        "kickoff": "2025-02-09T23:30Z",
+        "date": "2025-02-09"
+      }
+    }
+  }
+}

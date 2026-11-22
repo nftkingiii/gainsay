@@ -170,3 +170,32 @@ test("NBA markets ask miner 7330 for the dated game, never a team-only latest ga
   assert.deepEqual(Object.keys(req!.payload), ["question"]);
   assert.match(String(req!.payload.question), /Timberwolves vs Rockets, NBA, 2026-11-04/);
 });
+
+// Takar Outcome (miner 20261117) covers NFL and Champions League games, which had no provider here.
+const takarRun = JSON.parse(readFileSync(new URL("./fixtures/takar-outcome-nfl.json", import.meta.url), "utf8"));
+const superBowl = parseGameMarket({
+  question: "Chiefs vs. Eagles",
+  slug: "nfl-kc-phi-2025-02-09",
+  sportsMarketType: "moneyline",
+  gameStartTime: "2025-02-09 23:30:00+00",
+  outcomes: '["Chiefs", "Eagles"]',
+})!;
+
+test("NFL markets ask Takar Outcome for the dated final score", async () => {
+  const { requestsFor } = await import("../src/verdict/route.ts");
+  const [req] = requestsFor(superBowl);
+  assert.equal(req!.minerId, "20261117");
+  assert.equal(req!.endpoint, "/resolve");
+  assert.equal(req!.payload.event, "What was the final score of Chiefs vs Eagles on 2025-02-09 (NFL)?");
+});
+
+test("reads Takar Outcome's recorded answer and settles the Super Bowl market", async () => {
+  const { fromTakarOutcome } = await import("../src/verdict/evidence.ts");
+  const e = fromTakarOutcome(takarRun.result, { minerId: takarRun.miner_id, signalHash: takarRun.signal_hash, receiptHash: null, costUsd: 0.01 })!;
+  assert.deepEqual([e.home, e.homeScore, e.away, e.awayScore, e.finished], ["Philadelphia Eagles", 40, "Kansas City Chiefs", 22, true]);
+  assert.equal(e.source, "takar-outcome:espn");
+  const later = new Date("2025-02-11T00:00:00Z");
+  assert.equal(decide(superBowl, 0, [e], later).verdict, "holds", "the Eagles won, so a proposal of 0 (Chiefs lose) holds");
+  assert.equal(decide(superBowl, 1, [e], later).verdict, "wrong");
+  assert.equal(fromTakarOutcome({ data: {} }, { minerId: "20261117", signalHash: "0x", receiptHash: null, costUsd: 0 }), null, "no scores, no evidence");
+});

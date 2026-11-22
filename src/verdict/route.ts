@@ -1,4 +1,4 @@
-import { fromMlbOfficial, fromNhlOfficial, fromSportwire, type Evidence } from "./evidence.ts";
+import { fromMlbOfficial, fromNhlOfficial, fromSportwire, fromTakarOutcome, type Evidence } from "./evidence.ts";
 import type { GameMarket } from "./market.ts";
 import { localDate } from "./engine.ts";
 
@@ -11,6 +11,8 @@ export interface Request {
 }
 
 const SPORTWIRE_LEAGUES = new Set(["nba", "laliga", "epl"]);
+/** Leagues with no other provider yet: Takar Outcome reads ESPN's scoreboard for the dated game. */
+const TAKAR_LEAGUES: Record<string, string> = { nfl: "NFL", ucl: "Champions League" };
 const LEAGUE_LABEL: Record<string, string> = { nba: "NBA", laliga: "LaLiga", epl: "Premier League" };
 
 /** Providers proven through paid calls. Leagues without one return no requests. */
@@ -51,6 +53,22 @@ export function requestsFor(market: GameMarket): Request[] {
         payload: { question },
         read: (result, meta) => {
           const evidence = fromSportwire(result as Record<string, unknown>, meta);
+          return evidence ? [evidence] : [];
+        },
+      },
+    ];
+  }
+  if (TAKAR_LEAGUES[market.league] && market.teams.length === 2) {
+    // A dated, two-team question; the answer's data.scores carries home, away, scores and kickoff.
+    const event = `What was the final score of ${market.teams.join(" vs ")} on ${localDate(market.kickoff, market.league)} (${TAKAR_LEAGUES[market.league]})?`;
+    return [
+      {
+        label: "Takar Outcome, ESPN scoreboard",
+        minerId: "20261117",
+        endpoint: "/resolve",
+        payload: { event },
+        read: (result, meta) => {
+          const evidence = fromTakarOutcome(result as Parameters<typeof fromTakarOutcome>[0], meta);
           return evidence ? [evidence] : [];
         },
       },
