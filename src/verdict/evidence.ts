@@ -99,6 +99,7 @@ interface TakarScores {
   away?: { team?: string; score?: number };
   finished?: boolean;
   kickoff?: string | null;
+  date?: string;
 }
 
 /** Takar Outcome (miner 20261117) reads ESPN's scoreboard by code and returns the score in data.scores. */
@@ -106,6 +107,11 @@ export function fromTakarOutcome(result: { data?: { scores?: TakarScores } }, me
   const s = result?.data?.scores;
   if (!s?.home?.team || !s.away?.team) return null;
   if (typeof s.home.score !== "number" || typeof s.away.score !== "number") return null;
+  // Only a kickoff that parses counts: an Invalid Date would slip past the kickoff tolerance check.
+  // Without one, the game's date (YYYY-MM-DD) goes through the date-only check instead.
+  const k = typeof s.kickoff === "string" ? new Date(s.kickoff) : null;
+  const kickoff = k && Number.isFinite(k.getTime()) ? k : null;
+  const gameDate = typeof s.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(s.date) ? s.date : undefined;
   return {
     ...meta,
     source: "takar-outcome:espn",
@@ -114,6 +120,7 @@ export function fromTakarOutcome(result: { data?: { scores?: TakarScores } }, me
     homeScore: s.home.score,
     awayScore: s.away.score,
     finished: s.finished === true,
-    kickoff: typeof s.kickoff === "string" ? new Date(s.kickoff) : null,
+    kickoff,
+    ...(kickoff ? {} : { gameDate }),
   };
 }

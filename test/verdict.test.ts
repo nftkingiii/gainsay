@@ -198,4 +198,13 @@ test("reads Takar Outcome's recorded answer and settles the Super Bowl market", 
   assert.equal(decide(superBowl, 0, [e], later).verdict, "holds", "the Eagles won, so a proposal of 0 (Chiefs lose) holds");
   assert.equal(decide(superBowl, 1, [e], later).verdict, "wrong");
   assert.equal(fromTakarOutcome({ data: {} }, { minerId: "20261117", signalHash: "0x", receiptHash: null, costUsd: 0 }), null, "no scores, no evidence");
+  // An unparsable kickoff must not slip past the game check: it falls back to the date-only check.
+  const bad = structuredClone(takarRun.result);
+  bad.data.scores.kickoff = "not a date";
+  const e2 = fromTakarOutcome(bad, { minerId: "20261117", signalHash: "0x", receiptHash: null, costUsd: 0 })!;
+  assert.equal(e2.kickoff, null);
+  assert.equal(e2.gameDate, "2025-02-09");
+  bad.data.scores.date = "2025-02-10";
+  const e3 = fromTakarOutcome(bad, { minerId: "20261117", signalHash: "0x", receiptHash: null, costUsd: 0 })!;
+  assert.notEqual(decide(superBowl, 0, [e3], later).verdict, "holds", "a game on another day is not this market's game");
 });
