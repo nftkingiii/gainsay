@@ -196,3 +196,19 @@ details ul { margin: 8px 0 0; padding-left: 16px; color: var(--text-3); }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* Solana */
+.sol-h { margin: 32px 0 8px; }
+.sol { list-style: none; margin: 0 0 24px; padding: 0; border-top: 1px solid var(--line); }
+.sol-row { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 2fr) minmax(0, 2fr); gap: 4px 24px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.sol-game, .sol-venue { display: flex; flex-direction: column; gap: 2px; }
+.sol-title { font-weight: 500; }
+.sol-venue .muted { font-size: 12px; }
+.sol-verdict .verdict-word { font-size: 22px; line-height: 28px; margin: 0; }
+.sol-detail { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: 13px; line-height: 20px; color: var(--text-2); }
+.sol-slot { grid-column: 3; justify-self: start; }
+.sol-slot button { font: 500 14px/20px var(--sans); height: 36px; padding: 0 14px; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--card); color: var(--text); cursor: pointer; }
+.sol-slot button:disabled { color: var(--text-3); cursor: default; }
+.sol-detail .hash { font-family: var(--mono); font-size: 12px; }
+.warn { color: var(--caution); }
+@media (max-width: 720px) { .sol-row { grid-template-columns: 1fr; } .sol-slot { grid-column: 1; } }

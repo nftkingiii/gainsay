@@ -75,9 +75,48 @@ export function createChecker(options: { asker: Asker | null; dailyBudgetUsd: nu
     return evidence;
   }
 
+  /** Buys (or reuses) the evidence for a game's requests. One purchase often covers every market on the game. */
+  async function gather(
+    requests: Request[],
+  ): Promise<{ ok: true; evidence: Evidence[] } | { ok: false; status: "paused" | "budget_spent" | "failed"; note: string }> {
+    const evidence: Evidence[] = [];
+    for (const request of requests) {
+      const got = await evidenceFor(request);
+      if (got === "budget") {
+        const live = Boolean(options.asker) && options.dailyBudgetUsd > 0;
+        return {
+          ok: false,
+          status: live ? "budget_spent" : "paused",
+          note: live
+            ? "Today's evidence budget is spent. Try again tomorrow."
+            : "Paid checks are paused on this deployment. This shows what would be bought.",
+        };
+      }
+      if (got === "failed") {
+        return { ok: false, status: "failed", note: `${request.label} did not return an answer. Nothing was charged for a failed call.` };
+      }
+      evidence.push(...got);
+    }
+    return { ok: true, evidence };
+  }
+
   return {
     paidChecksEnabled: () => Boolean(options.asker) && options.dailyBudgetUsd > 0,
     budgetLeftUsd: () => Math.max(0, budgetLeft()),
+
+    /** Evidence for a game that did not come from Polymarket's own API, such as a Jupiter market. */
+    async evidenceForGame(game: GameMarket): Promise<
+      | { status: "ok"; evidence: Evidence[]; plan: { label: string; minerId: string }[] }
+      | { status: "no_provider" | "not_started" | "paused" | "budget_spent" | "failed"; note: string; plan: { label: string; minerId: string }[] }
+    > {
+      const requests = requestsFor(game);
+      const plan = requests.map((r) => ({ label: r.label, minerId: r.minerId }));
+      if (!requests.length) return { status: "no_provider", note: "No proven Telegraph provider covers this league yet.", plan };
+      if (now() < game.kickoff.getTime()) return { status: "not_started", note: "The game has not started.", plan };
+      const gathered = await gather(requests);
+      if (!gathered.ok) return { status: gathered.status, note: gathered.note, plan };
+      return { status: "ok", evidence: gathered.evidence, plan };
+    },
 
     async check(raw: Market | string, proposal: Proposal | null): Promise<CheckResult> {
       const market = typeof raw === "string" ? await marketById(raw) : raw;
@@ -117,22 +156,9 @@ export function createChecker(options: { asker: Asker | null; dailyBudgetUsd: nu
       const cached = resultCache.get(cacheKey);
       if (cached && now() - cached.at < EVIDENCE_TTL_MS) return cached.result;
 
-      const evidence: Evidence[] = [];
-      for (const request of requests) {
-        const got = await evidenceFor(request);
-        if (got === "budget") {
-          return finish(
-            options.asker && options.dailyBudgetUsd > 0 ? "budget_spent" : "paused",
-            options.asker && options.dailyBudgetUsd > 0
-              ? "Today's evidence budget is spent. Try again tomorrow."
-              : "Paid checks are paused on this deployment. This shows what would be bought.",
-            null,
-            requests,
-          );
-        }
-        if (got === "failed") return finish("failed", `${request.label} did not return an answer. Nothing was charged for a failed call.`, null, requests);
-        evidence.push(...got);
-      }
+      const gathered = await gather(requests);
+      if (!gathered.ok) return finish(gathered.status, gathered.note, null, requests);
+      const evidence = gathered.evidence;
       const verdict = decide(parsed, proposal?.value ?? null, evidence, new Date(now()));
       const result = finish("checked", verdict.note, verdict, requests);
       resultCache.set(cacheKey, { at: now(), result });

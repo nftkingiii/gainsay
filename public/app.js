@@ -62,6 +62,7 @@ function select(tab) {
   }
   history.replaceState(null, "", `#${tab.id.slice(4)}`);
   if (tab.id === "tab-watch") loadFeed();
+  if (tab.id === "tab-solana") loadSolana();
 }
 tabs.forEach((tab, i) => {
   tab.addEventListener("click", () => select(tab));
@@ -235,3 +236,88 @@ $("covered-only").addEventListener("change", loadFeed);
 setInterval(() => {
   if (!$("panel-watch").hidden) loadFeed();
 }, 20000);
+
+/* Solana */
+const SOL_WORDS = { holds: "Holds", wrong: "Wrong", too_early: "Too early", contested: "Contested", no_independent_source: "No independent source", venue_open: "Venue not settled", settled: "Settled" };
+const day = (iso) => (iso ? new Date(iso).toISOString().slice(0, 10) : "");
+const PROVIDER = { polymarket: "Polymarket", kalshi: "Kalshi" };
+let solLoaded = false;
+
+function solRow(r) {
+  const a = r.audit;
+  const key = a ? a.headline : r.status;
+  const tone = STRONG.has(key) ? "v-" + key : "v-quiet";
+  const word = a ? SOL_WORDS[key] ?? key : WORDS[key] ?? key;
+  const score = a?.accepted?.[0];
+  const receipts = (a?.accepted ?? [])
+    .map((e) => '<a class="hash" href="' + SIGNAL_URL + esc(e.signalHash) + '" target="_blank" rel="noopener">' + esc(SOURCE[e.source] ?? e.source) + " " + esc(short(e.signalHash)) + "</a>")
+    .join(" ");
+  const accounts = (r.venue.markets[0]?.accounts ?? [])
+    .map(
+      (x) =>
+        '<a class="hash" href="' + esc(x.explorer) + '" target="_blank" rel="noopener">' + esc(short(x.pubkey)) + "</a> " +
+        (x.onChain ? (x.agrees ? "on-chain " + esc(x.onChain.outcome) : '<span class="warn">on-chain ' + esc(x.onChain.outcome) + " differs</span>") : "not read"),
+    )
+    .join(" · ");
+  const lines = a?.lines?.total ? a.lines.holds + " of " + a.lines.total + " totals and spreads hold" + (a.lines.wrong ? ", " + a.lines.wrong + " wrong" : "") : "";
+  const detail = [
+    score ? "Score " + esc(score.away) + " " + esc(score.awayScore) + " – " + esc(score.homeScore) + " " + esc(score.home) : "",
+    lines,
+    a?.note && key !== "holds" ? esc(a.note) : "",
+    r.status !== "checked" ? esc(r.note) : "",
+    a?.rejected?.length ? a.rejected.length + " answer" + (a.rejected.length > 1 ? "s" : "") + " rejected as not this game" : "",
+    r.chain.read ? "result accounts: " + r.chain.matched + " of " + r.chain.read + " match the API" + (r.chain.unread ? ", " + r.chain.unread + " unread" : "") : "",
+  ].filter(Boolean);
+  return (
+    '<li class="sol-row">' +
+    '<div class="sol-game"><span class="sol-title">' + esc(r.title) + '</span><span class="muted">' + esc(PROVIDER[r.provider]) + " · " + esc(r.league.toUpperCase()) + " · " + esc(day(r.kickoff)) + "</span></div>" +
+    '<div class="sol-venue"><span class="muted">Venue says</span>' + esc(r.venue.headline) + "</div>" +
+    '<div class="sol-verdict"><span class="verdict-word ' + tone + '">' + esc(word) + "</span></div>" +
+    '<div class="sol-detail">' +
+    detail.map((d) => "<span>" + d + "</span>").join("") +
+    (receipts ? "<span>Telegraph " + receipts + "</span>" : "") +
+    (accounts ? "<span>Solana result " + accounts + "</span>" : "") +
+    (a ? "<span>Cost " + usd(a.costUsd) + " test USDC</span>" : "") +
+    "</div></li>"
+  );
+}
+
+function solStub(s, paid) {
+  return (
+    '<li class="sol-row sol-stub"><div class="sol-game"><span class="sol-title">' + esc(s.title) + '</span><span class="muted">' + esc(PROVIDER[s.provider]) + " · " + esc(s.league.toUpperCase()) + " · " + esc(day(s.kickoff)) + "</span></div>" +
+    '<div class="sol-slot"><button type="button" data-event="' + esc(s.eventId) + '"' + (paid ? "" : " disabled") + ">" + (paid ? "Check, about $0.01" : "Paid checks off") + "</button></div></li>"
+  );
+}
+
+async function solCheck(button) {
+  const li = button.closest("li");
+  button.disabled = true;
+  button.textContent = "Checking";
+  try {
+    const res = await fetch("/api/solana/check", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ eventId: button.dataset.event }) });
+    const body = await res.json();
+    if (!res.ok) throw new Error(body.error || "The check failed");
+    li.outerHTML = solRow(body);
+  } catch (error) {
+    button.disabled = false;
+    button.textContent = "Check, about $0.01";
+    li.querySelector(".sol-slot").insertAdjacentHTML("beforeend", '<p class="note">' + esc(error.message) + "</p>");
+  }
+}
+
+async function loadSolana() {
+  if (solLoaded) return;
+  try {
+    const d = await (await fetch("/api/solana")).json();
+    solLoaded = true;
+    $("sol-recorded").innerHTML = d.recorded.length ? d.recorded.map(solRow).join("") : '<li class="empty">No recorded checks yet</li>';
+    $("sol-meta").textContent = d.error
+      ? "Jupiter Predict did not answer just now. Reload in a minute."
+      : "Games Gainsay can settle: NBA, NHL, MLB, NFL, Premier League, LaLiga and Champions League. Each check buys one score for about $0.01 of test USDC, within a daily budget.";
+    $("sol-recent").innerHTML = d.recent.map((s) => solStub(s, d.paidChecks)).join("");
+    for (const b of $("sol-recent").querySelectorAll("[data-event]")) b.addEventListener("click", () => solCheck(b));
+  } catch {
+    $("sol-meta").textContent = "The Solana list is unavailable right now";
+  }
+}
+if (!$("panel-solana").hidden) loadSolana();

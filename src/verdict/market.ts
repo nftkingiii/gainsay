@@ -7,6 +7,8 @@ export type GameMarket = {
 } & (
   | { kind: "moneyline" }
   | { kind: "team_win"; team: string }
+  /** "Will the game end in a draw?": a yes/no market over a final score that is level. */
+  | { kind: "draw" }
   | { kind: "total"; line: number }
   | { kind: "spread"; line: number }
 );

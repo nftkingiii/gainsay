@@ -1,0 +1,264 @@
+{
+ "eventId": "POLY-1326350",
+ "isActive": false,
+ "isLive": false,
+ "category": "sports",
+ "subcategory": "ucl",
+ "tags": [
+  "sports",
+  "games",
+  "soccer",
+  "ucl"
+ ],
+ "metadata": {
+  "slug": "ucl-bru-liv-2026-11-25",
+  "title": "Club Brugge KV vs. Liverpool FC",
+  "isLive": false,
+  "league": "UEFA Champions League 2025",
+  "series": "polymarket",
+  "eventId": "POLY-1326350",
+  "imageUrl": "https://polymarket-upload.s3.us-east-2.amazonaws.com/champions-league-pic-QIUFsL8vaDdq.png",
+  "subtitle": "",
+  "closeTime": "2026-11-25T20:00:00Z"
+ },
+ "volumeUsd": "713652000000",
+ "volume24hr": "700182000000",
+ "beginAt": "1795636800",
+ "closeCondition": "This market will close and expire after a winner is declared.",
+ "rulesPdf": "",
+ "markets": [
+  {
+   "provider": "polymarket",
+   "marketId": "POLY-6757550",
+   "status": "closed",
+   "result": "no",
+   "marketResultPubkey": "HUBHCUUyWkxsn1FmF9dzopXQkwR6JmrbEJoRRR3rs6Wh",
+   "title": "Club Brugge KV",
+   "openTime": 1793991746,
+   "closeTime": 1795636800,
+   "isTeamMarket": false,
+   "rulesPrimary": "In the upcoming UEFA Champions League game between Club Brugge KV and Liverpool FC, originally scheduled for Wednesday, November 25, 2026 at 3:00 PM ET (as of creation of the first market related to the event):\nIf Club Brugge KV wins, this market will resolve to \"Yes\".\nOtherwise, this market will resolve to \"No\".\nIf this market's outcome was definitively determined under its rules by the listed resolution sources before abandonment, that outcome will stand. Otherwise, the following no-result provisions apply. If the game is canceled, does not start by Friday, November 27, 2026, 11:59 PM ET, or is abandoned with no official result by that time, this market will resolve to \"No\".\nThe following abandonment rules apply only when this market's outcome was not already definitively determined under its rules before abandonment. If the game is abandoned, this market will resolve according to the official ruling of the governing body or event organizers on the abandoned game. If a result is awarded by Friday, November 27, 2026, 11:59 PM ET that determines this market's outcome, this market will resolve based on the awarded result, regardless of the score as played. If no such result is awarded and the result as played at the time of abandonment is declared to stand by Friday, November 27, 2026, 11:59 PM ET, this market will resolve based on the game as played. If the game is replayed or resumed from the point of abandonment and has an official result by Friday, November 27, 2026, 11:59 PM ET, this market will resolve based on the completed result. In any other case, this market will resolve to \"No\".\nThis market refers only to the outcome within the first 90 minutes of regular play plus stoppage time.\n\nRecognizable abbreviations, alternate or erroneous spellings, sponsor names, regional identifiers, and minor formatting differences in a team's or player's name will not affect resolution, provided the intended team or player can be clearly and uniquely identified as a participant in the listed fixture or competition. If a listed name has no reasonable connection to any participant, or could reasonably refer to more than one participant such that the intended team or player cannot be determined, this market will resolve as it would if the listed fixture had been canceled entirely; a listed participant who cannot be identified does not count as inactive or absent. The primary resolution source for this market will be official match information from UEFA Champions League (https://www.uefa.com/). If the governing body or event organizers have not published final statistics within 2 hours of the event's conclusion, data from Flashscore may be used; if Flashscore data is unavailable, data from Sofascore may be used; if neither is available, a consensus of credible reporting may be used. Revisions to officially declared final scores made after market resolution will not be accounted for in determining the outcome. If no acceptable data is available within 24 hours of the event's conclusion, this market will resolve to \"No\".",
+   "rulesSecondary": "",
+   "resolveAt": "2026-11-25T22:12:31.794Z",
+   "pricing": {
+    "buyYesPriceUsd": 0,
+    "sellYesPriceUsd": 0,
+    "sellNoPriceUsd": 0,
+    "buyNoPriceUsd": 0,
+    "volume": 135563
+   },
+   "imageUrl": null,
+   "team": {
+    "name": "Club Brugge KV",
+    "imageUrl": "https://polymarket-upload.s3.us-east-2.amazonaws.com/team_logos/soccer/ucl/ucl_bru_90000555.png",
+    "color": "#145b8a",
+    "abbreviation": "bru"
+   },
+   "outcomes": [
+    "Yes",
+    "No"
+   ],
+   "clobTokenIds": [
+    "16426703296428128061965338542572533579544821160389183286772417003245866009142",
+    "45650367701713534281854830784506579273244643688821034587199584105003062974748"
+   ],
+   "marketOptions": [
+    {
+     "label": "Yes",
+     "buyYes": true
+    },
+    {
+     "label": "No",
+     "buyYes": false
+    }
+   ],
+   "sportsMarketType": "moneyline",
+   "sportsLine": null,
+   "periodType": null,
+   "periodNumber": null,
+   "gameNumber": null
+  },
+  {
+   "provider": "polymarket",
+   "marketId": "POLY-6757552",
+   "status": "closed",
+   "result": "yes",
+   "marketResultPubkey": "DC7rBXgYBkqikzVSxSpok3PGmSDUYZ6NXJUkMmfGv8in",
+   "title": "Liverpool FC",
+   "openTime": 1793991746,
+   "closeTime": 1795636800,
+   "isTeamMarket": false,
+   "rulesPrimary": "In the upcoming UEFA Champions League game between Club Brugge KV and Liverpool FC, originally scheduled for Wednesday, November 25, 2026 at 3:00 PM ET (as of creation of the first market related to the event):\nIf Liverpool FC wins, this market will resolve to \"Yes\".\nOtherwise, this market will resolve to \"No\".\nIf this market's outcome was definitively determined under its rules by the listed resolution sources before abandonment, that outcome will stand. Otherwise, the following no-result provisions apply. If the game is canceled, does not start by Friday, November 27, 2026, 11:59 PM ET, or is abandoned with no official result by that time, this market will resolve to \"No\".\nThe following abandonment rules apply only when this market's outcome was not already definitively determined under its rules before abandonment. If the game is abandoned, this market will resolve according to the official ruling of the governing body or event organizers on the abandoned game. If a result is awarded by Friday, November 27, 2026, 11:59 PM ET that determines this market's outcome, this market will resolve based on the awarded result, regardless of the score as played. If no such result is awarded and the result as played at the time of abandonment is declared to stand by Friday, November 27, 2026, 11:59 PM ET, this market will resolve based on the game as played. If the game is replayed or resumed from the point of abandonment and has an official result by Friday, November 27, 2026, 11:59 PM ET, this market will resolve based on the completed result. In any other case, this market will resolve to \"No\".\nThis market refers only to the outcome within the first 90 minutes of regular play plus stoppage time.\n\nRecognizable abbreviations, alternate or erroneous spellings, sponsor names, regional identifiers, and minor formatting differences in a team's or player's name will not affect resolution, provided the intended team or player can be clearly and uniquely identified as a participant in the listed fixture or competition. If a listed name has no reasonable connection to any participant, or could reasonably refer to more than one participant such that the intended team or player cannot be determined, this market will resolve as it would if the listed fixture had been canceled entirely; a listed participant who cannot be identified does not count as inactive or absent. The primary resolution source for this market will be official match information from UEFA Champions League (https://www.uefa.com/). If the governing body or event organizers have not published final statistics within 2 hours of the event's conclusion, data from Flashscore may be used; if Flashscore data is unavailable, data from Sofascore may be used; if neither is available, a consensus of credible reporting may be used. Revisions to officially declared final scores made after market resolution will not be accounted for in determining the outcome. If no acceptable data is available within 24 hours of the event's conclusion, this market will resolve to \"No\".",
+   "rulesSecondary": "",
+   "resolveAt": "2026-11-25T22:12:31.806Z",
+   "pricing": {
+    "buyYesPriceUsd": 0,
+    "sellYesPriceUsd": 0,
+    "sellNoPriceUsd": 0,
+    "buyNoPriceUsd": 0,
+    "volume": 524969
+   },
+   "imageUrl": null,
+   "team": {
+    "name": "Liverpool FC",
+    "imageUrl": "https://polymarket-upload.s3.us-east-2.amazonaws.com/team_logos/soccer/ucl/ucl_liv_90000515.png",
+    "color": "#81c1c1",
+    "abbreviation": "liv"
+   },
+   "outcomes": [
+    "Yes",
+    "No"
+   ],
+   "clobTokenIds": [
+    "47511752057989066620832409717964379598480190650600406713784328778885851427289",
+    "101294749466030664521141416774430779906076956176890474540952073984751648473414"
+   ],
+   "marketOptions": [
+    {
+     "label": "Yes",
+     "buyYes": true
+    },
+    {
+     "label": "No",
+     "buyYes": false
+    }
+   ],
+   "sportsMarketType": "moneyline",
+   "sportsLine": null,
+   "periodType": null,
+   "periodNumber": null,
+   "gameNumber": null
+  },
+  {
+   "provider": "polymarket",
+   "marketId": "POLY-6757551",
+   "status": "closed",
+   "result": "no",
+   "marketResultPubkey": "",
+   "title": "Draw",
+   "openTime": 1793991746,
+   "closeTime": 1795636800,
+   "isTeamMarket": false,
+   "rulesPrimary": "In the upcoming UEFA Champions League game between Club Brugge KV and Liverpool FC, originally scheduled for Wednesday, November 25, 2026 at 3:00 PM ET (as of creation of the first market related to the event):\nIf the game ends in a draw, this market will resolve to \"Yes\".\nOtherwise, this market will resolve to \"No\".\nIf this market's outcome was definitively determined under its rules by the listed resolution sources before abandonment, that outcome will stand. Otherwise, the following no-result provisions apply. If the game is canceled, does not start by Friday, November 27, 2026, 11:59 PM ET, or is abandoned with no official result by that time, this market will resolve to \"Yes\".\nThe following abandonment rules apply only when this market's outcome was not already definitively determined under its rules before abandonment. If the game is abandoned, this market will resolve according to the official ruling of the governing body or event organizers on the abandoned game. If a result is awarded by Friday, November 27, 2026, 11:59 PM ET that determines this market's outcome, this market will resolve based on the awarded result, regardless of the score as played. If no such result is awarded and the result as played at the time of abandonment is declared to stand by Friday, November 27, 2026, 11:59 PM ET, this market will resolve based on the game as played. If the game is replayed or resumed from the point of abandonment and has an official result by Friday, November 27, 2026, 11:59 PM ET, this market will resolve based on the completed result. In any other case, this market will resolve to \"Yes\".\nThis market refers only to the outcome within the first 90 minutes of regular play plus stoppage time.\n\nRecognizable abbreviations, alternate or erroneous spellings, sponsor names, regional identifiers, and minor formatting differences in a team's or player's name will not affect resolution, provided the intended team or player can be clearly and uniquely identified as a participant in the listed fixture or competition. If a listed name has no reasonable connection to any participant, or could reasonably refer to more than one participant such that the intended team or player cannot be determined, this market will resolve as it would if the listed fixture had been canceled entirely; a listed participant who cannot be identified does not count as inactive or absent. The primary resolution source for this market will be official match information from UEFA Champions League (https://www.uefa.com/). If the governing body or event organizers have not published final statistics within 2 hours of the event's conclusion, data from Flashscore may be used; if Flashscore data is unavailable, data from Sofascore may be used; if neither is available, a consensus of credible reporting may be used. Revisions to officially declared final scores made after market resolution will not be accounted for in determining the outcome. If no acceptable data is available within 24 hours of the event's conclusion, this market will resolve to \"Yes\".",
+   "rulesSecondary": "",
+   "resolveAt": "2026-11-25T22:12:31.770Z",
+   "pricing": {
+    "buyYesPriceUsd": 0,
+    "sellYesPriceUsd": 0,
+    "sellNoPriceUsd": 0,
+    "buyNoPriceUsd": 0,
+    "volume": 53120
+   },
+   "imageUrl": null,
+   "team": null,
+   "outcomes": [
+    "Yes",
+    "No"
+   ],
+   "clobTokenIds": [
+    "110242500210415241333871746734248742705047197966078079107988236786294537100867",
+    "98033525734596297457565212427959999900776322516884798816303203702456286759790"
+   ],
+   "marketOptions": [
+    {
+     "label": "Yes",
+     "buyYes": true
+    },
+    {
+     "label": "No",
+     "buyYes": false
+    }
+   ],
+   "sportsMarketType": "moneyline",
+   "sportsLine": null,
+   "periodType": null,
+   "periodNumber": null,
+   "gameNumber": null
+  },
+  {
+   "provider": "polymarket",
+   "marketId": "POLY-6993485-0",
+   "status": "closed",
+   "result": "yes",
+   "marketResultPubkey": "",
+   "title": "Over",
+   "openTime": 1794510957,
+   "closeTime": 1795636800,
+   "isTeamMarket": true,
+   "rulesPrimary": "In the upcoming UEFA Champions League game between Club Brugge KV and Liverpool FC, originally scheduled for Wednesday, November 25, 2026 at 3:00 PM ET (as of creation of the first market related to the event):\n\nThis market will resolve to \"Over\" if Club Brugge KV and Liverpool FC combine to score 1 or more goals in this game.\n\nIf the combined total is less than 1, this market will resolve to \"Under\".\n\nIf this market's outcome was definitively determined under its rules by the listed resolution sources before abandonment, that outcome will stand. Otherwise, the following no-result provisions apply. If the game is canceled, does not start by Friday, November 27, 2026, 11:59 PM ET, or is abandoned with no official result by that time, this market will resolve 50-50.\n\nThe following abandonment rules apply only when this market's outcome was not already definitively determined under its rules before abandonment. If the game is abandoned, this market will resolve according to the official ruling of the governing body or event organizers on the abandoned game. If a result is awarded by Friday, November 27, 2026, 11:59 PM ET that determines this market's outcome, this market will resolve based on the awarded result, regardless of the score as played. If no such result is awarded and the result as played at the time of abandonment is declared to stand by Friday, November 27, 2026, 11:59 PM ET, this market will resolve based on the game as played. If the game is replayed or resumed from the point of abandonment and has an official result by Friday, November 27, 2026, 11:59 PM ET, this market will resolve based on the completed result. In any other case, this market will resolve 50-50.\n\nThis market refers only to the outcome within the first 90 minutes of regular play plus stoppage time.\n\nRecognizable abbreviations, alternate or erroneous spellings, sponsor names, regional identifiers, and minor formatting differences in a team's or player's name will not affect resolution, provided the intended team or player can be clearly and uniquely identified as a participant in the listed fixture or competition. If a listed name has no reasonable connection to any participant, or could reasonably refer to more than one participant such that the intended team or player cannot be determined, this market will resolve as it would if the listed fixture had been canceled entirely; a listed participant who cannot be identified does not count as inactive or absent. The primary resolution source for this market will be official match information from UEFA Champions League (https://www.uefa.com/). If the governing body or event organizers have not published final statistics within 2 hours of the event's conclusion, data from Flashscore may be used; if Flashscore data is unavailable, data from Sofascore may be used; if neither is available, a consensus of credible reporting may be used. Revisions to officially declared final scores made after market resolution will not be accounted for in determining the outcome. If no acceptable data is available within 24 hours of the event's conclusion, this market will resolve 50-50, or to \"Draw\" where applicable.",
+   "rulesSecondary": "",
+   "resolveAt": "2026-11-25T22:12:36.552Z",
+   "pricing": {
+    "buyYesPriceUsd": 0,
+    "sellYesPriceUsd": 0,
+    "sellNoPriceUsd": 0,
+    "buyNoPriceUsd": 0,
+    "volume": 20344
+   },
+   "imageUrl": null,
+   "team": null,
+   "outcomes": [
+    "Over",
+    "Under"
+   ],
+   "clobTokenIds": [
+    "57129777896388441568588141311407376585094293096627200426955858367736487586358",
+    "103009019712257531514545347626641765831585656869583398280636438107542890010668"
+   ],
+   "marketOptions": [
+    {
+     "label": "O 0.5",
+     "buyYes": true
+    }
+   ],
+   "sportsMarketType": "totals",
+   "sportsLine": "0.5",
+   "periodType": null,
+   "periodNumber": null,
+   "gameNumber": null
+  },
+  {
+   "provider": "polymarket",
+   "marketId": "POLY-6993485-1",
+   "status": "closed",
+   "result": "no",
+   "marketResultPubkey": "",
+   "title": "Under",
+   "openTime": 1794510957,
+   "closeTime": 1795636800,
+   "isTeamMarket": true,
+   "rulesPrimary": "In the upcoming UEFA Champions League game between Club Brugge KV and Liverpool FC, originally scheduled for Wednesday, November 25, 2026 at 3:00 PM ET (as of creation of the first market related to the event):\n\nThis market will resolve to \"Over\" if Club Brugge KV and Liverpool FC combine to score 1 or more goals in this game.\n\nIf the combined total is less than 1, this market will resolve to \"Under\".\n\nIf this market's outcome was definitively determined under its rules by the listed resolution sources before abandonment, that outcome will stand. Otherwise, the following no-result provisions apply. If the game is canceled, does not start by Friday, November 27, 2026, 11:59 PM ET, or is abandoned with no official result by that time, this market will resolve 50-50.\n\nThe following abandonment rules apply only when this market's outcome was not already definitively determined under its rules before abandonment. If the game is abandoned, this market will resolve according to the official ruling of the governing body or event organizers on the abandoned game. If a result is awarded by Friday, November 27, 2026, 11:59 PM ET that determines this market's outcome, this market will resolve based on the awarded result, regardless of the score as played. If no such result is awarded and the result as played at the time of abandonment is declared to stand by Friday, November 27, 2026, 11:59 PM ET, this market will resolve based on the game as played. If the game is replayed or resumed from the point of abandonment and has an official result by Friday, November 27, 2026, 11:59 PM ET, this market will resolve based on the completed result. In any other case, this market will resolve 50-50.\n\nThis market refers only to the outcome within the first 90 minutes of regular play plus stoppage time.\n\nRecognizable abbreviations, alternate or erroneous spellings, sponsor names, regional identifiers, and minor formatting differences in a team's or player's name will not affect resolution, provided the intended team or player can be clearly and uniquely identified as a participant in the listed fixture or competition. If a listed name has no reasonable connection to any participant, or could reasonably refer to more than one participant such that the intended team or player cannot be determined, this market will resolve as it would if the listed fixture had been canceled entirely; a listed participant who cannot be identified does not count as inactive or absent. The primary resolution source for this market will be official match information from UEFA Champions League (https://www.uefa.com/). If the governing body or event organizers have not published final statistics within 2 hours of the event's conclusion, data from Flashscore may be used; if Flashscore data is unavailable, data from Sofascore may be used; if neither is available, a consensus of credible reporting may be used. Revisions to officially declared final scores made after market resolution will not be accounted for in determining the outcome. If no acceptable data is available within 24 hours of the event's conclusion, this market will resolve 50-50, or to \"Draw\" where applicable.",
+   "rulesSecondary": "",
+   "resolveAt": "2026-11-25T22:12:36.552Z",
+   "pricing": {
+    "buyYesPriceUsd": 0,
+    "sellYesPriceUsd": 0,
+    "sellNoPriceUsd": 0,
+    "buyNoPriceUsd": 0,
+    "volume": 20344
+   },
+   "imageUrl": null,
+   "team": null,
+   "outcomes": [
+    "Over",
+    "Under"
+   ],
+   "clobTokenIds": [
+    "57129777896388441568588141311407376585094293096627200426955858367736487586358",
+    "103009019712257531514545347626641765831585656869583398280636438107542890010668"
+   ],
+   "marketOptions": [
+    {
+     "label": "U 0.5",
+     "buyYes": true
+    }
+   ],
+   "sportsMarketType": "totals",
+   "sportsLine": "0.5",
+   "periodType": null,
+   "periodNumber": null,
+   "gameNumber": null
+  }
+ ],
+ "sportsMarketGroups": []
+}

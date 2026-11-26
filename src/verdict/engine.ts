@@ -81,7 +81,7 @@ function scoreOf(team: string, e: Evidence): number {
 }
 
 /** Which proposed value this final score supports, or null for a push or a draw. */
-function expectedFrom(market: GameMarket, e: Evidence): 0 | 1 | null {
+export function expectedFrom(market: GameMarket, e: Evidence): 0 | 1 | null {
   const toValue = (firstOutcomeWins: boolean) => (firstOutcomeWins ? 1 : 0);
   const [first, second] = market.outcomes;
   switch (market.kind) {
@@ -93,6 +93,8 @@ function expectedFrom(market: GameMarket, e: Evidence): 0 | 1 | null {
       const rival = sameTeam(market.team, e.home) ? e.awayScore : e.homeScore;
       return toValue(scoreOf(market.team, e) > rival);
     }
+    case "draw":
+      return toValue(e.homeScore === e.awayScore);
     case "total": {
       const total = e.homeScore + e.awayScore;
       if (total === market.line) return null;

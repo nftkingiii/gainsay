@@ -17,6 +17,7 @@
     <nav class="tabs" role="tablist" aria-label="Sections">
       <button role="tab" id="tab-check" aria-controls="panel-check" aria-selected="true">Check</button>
       <button role="tab" id="tab-watch" aria-controls="panel-watch" aria-selected="false" tabindex="-1">Watch</button>
+      <button role="tab" id="tab-solana" aria-controls="panel-solana" aria-selected="false" tabindex="-1">Solana</button>
       <button role="tab" id="tab-how" aria-controls="panel-how" aria-selected="false" tabindex="-1">How it works</button>
     </nav>
     <span class="net" title="Telegraph evidence is paid with test USDC on Ethereum Sepolia">Sepolia testnet</span>
@@ -55,6 +56,19 @@
       <ol class="feed" id="feed"></ol>
     </section>
 
+    <section id="panel-solana" role="tabpanel" aria-labelledby="tab-solana" hidden>
+      <div class="page-head">
+        <h1>Solana markets, checked against the score</h1>
+        <p class="lede">For market makers, traders and venues that want to check a recorded resolution independently. Gainsay buys the official final score through Telegraph and compares it with the result Jupiter Predict recorded for the Polymarket and Kalshi markets it lists on Solana.</p>
+        <p class="hint">Evidence is paid with Sepolia test USDC. Venue results and result accounts are Solana mainnet data. Totals and spreads are judged from the same purchased score.</p>
+      </div>
+      <h2 class="sol-h">Checked games</h2>
+      <ol class="sol" id="sol-recorded"><li class="empty">Loading</li></ol>
+      <h2 class="sol-h">Recent finished games on Jupiter</h2>
+      <p class="hint" id="sol-meta"></p>
+      <ol class="sol" id="sol-recent"></ol>
+    </section>
+
     <section id="panel-how" class="how" role="tabpanel" aria-labelledby="tab-how" hidden>
       <div class="page-head">
         <h1>The final score, bought and checked</h1>
@@ -82,6 +96,7 @@
   <footer class="foot">
     <span>Evidence bought through <a href="https://anjoman.ai/docs" rel="noopener">Telegraph</a></span>
     <span>Proposals from UMA on Polygon</span>
+    <span>Solana markets from Jupiter Predict</span>
     <span>Not affiliated with Polymarket</span>
   </footer>
   <script src="/app.js" type="module"></script>

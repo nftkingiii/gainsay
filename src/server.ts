@@ -4,6 +4,7 @@ import { extname, join, normalize } from "node:path";
 import { resolveMarket } from "./gamma.ts";
 import { createChecker } from "./service/checker.ts";
 import { createFeed } from "./service/feed.ts";
+import { createSolana, loadRecord } from "./solana/service.ts";
 import { createAsker } from "./telegraph/client.ts";
 
 const env = process.env;
@@ -11,6 +12,7 @@ const key = env.GAINSAY_EVM_PRIVATE_KEY?.trim() as `0x${string}` | undefined;
 const dailyBudgetUsd = Number(env.GAINSAY_DAILY_BUDGET_USD ?? "0");
 
 const checker = createChecker({ asker: key ? createAsker(key) : null, dailyBudgetUsd });
+const solana = createSolana({ checker, record: loadRecord(new URL("../data/solana-record.json", import.meta.url)) });
 const feed = createFeed({
   wsUrl: env.POLYGON_WS_URL ?? "wss://polygon-bor-rpc.publicnode.com",
   httpUrl: env.POLYGON_RPC_URL ?? "https://polygon.drpc.org",
@@ -69,6 +71,17 @@ const server = createServer(async (req, res) => {
     }
 
     if (url.pathname === "/api/feed") return json(res, 200, feed.snapshot());
+
+    if (url.pathname === "/api/solana") return json(res, 200, await solana.list());
+
+    if (url.pathname === "/api/solana/check" && req.method === "POST") {
+      const forwarded = req.headers["x-real-ip"];
+      const ip = (Array.isArray(forwarded) ? forwarded[0] : forwarded) ?? req.socket.remoteAddress ?? "unknown";
+      if (!allowed(ip)) return json(res, 429, { error: "Too many checks. Wait a minute." });
+      const { eventId } = JSON.parse(await readBody(req)) as { eventId?: string };
+      if (!eventId || !/^(POLY-[0-9]{1,12}|KX[A-Z0-9-]{3,60})$/.test(eventId)) return json(res, 400, { error: "Pick a game from the list." });
+      return json(res, 200, await solana.check(eventId));
+    }
 
     if (url.pathname === "/api/check" && req.method === "POST") {
       const forwarded = req.headers["x-real-ip"];
