@@ -37,7 +37,54 @@ export function createAsker(privateKey: `0x${string}`) {
     },
   });
 
+  /**
+   * The node now offers Sepolia payment only as "escrow" (the x402 exact scheme it lists is on Base Sepolia and
+   * Solana devnet). Escrow draws on the wallet's Telegraph escrow balance: read the 402 challenge, sign its
+   * message with personal_sign, retry with X-PAYMENT, and read the receipt from X-PAYMENT-RESPONSE.
+   */
+  async function postEscrow(path: string, payload: unknown): Promise<AskResult | null> {
+    const body = JSON.stringify(payload);
+    const send = (headers: Record<string, string>) =>
+      fetch(NODE + path, { method: "POST", headers: { "content-type": "application/json", ...headers }, body, signal: AbortSignal.timeout(65_000) });
+    const first = await send({});
+    if (first.status !== 402) return { status: first.status, body: (await first.json()) as Record<string, unknown>, receipt: null };
+    const header = first.headers.get("payment-required");
+    const challenge = header ? (JSON.parse(Buffer.from(header, "base64").toString()) as { accepts: { scheme: string; network: string; payTo: string; extra?: { message?: string } }[] }) : null;
+    const escrow = challenge?.accepts.find((a) => a.scheme === "escrow" && a.network === NETWORK);
+    const template = escrow?.extra?.message;
+    if (!escrow || !template) return null;
+    const value = /Amount:\s*(\d+)\s*uUSDC/.exec(template)?.[1];
+    if (!value || Number(value) > Number(MAX_PER_CALL)) throw new Error("the node's quote is above Gainsay's per-call ceiling");
+    const validAfter = Math.floor(Date.now() / 1000) - 30;
+    const validBefore = validAfter + 90;
+    const nonce = `0x${Buffer.from(crypto.getRandomValues(new Uint8Array(32))).toString("hex")}`;
+    const from = account.address.toLowerCase();
+    const message = template
+      .replace("{from}", from)
+      .replace("{nonce}", nonce)
+      .replace("{validAfter}", String(validAfter))
+      .replace("{validBefore}", String(validBefore));
+    const signature = await account.signMessage({ message });
+    const paid = await send({
+      "x-payment": Buffer.from(
+        JSON.stringify({
+          x402Version: 2,
+          scheme: "escrow",
+          network: escrow.network,
+          payload: { signature, authorization: { from, to: escrow.payTo, value, validAfter: String(validAfter), validBefore: String(validBefore), nonce } },
+        }),
+      ).toString("base64"),
+    });
+    const answer = (await paid.json().catch(() => ({}))) as Record<string, unknown>;
+    const raw = paid.headers.get("x-payment-response");
+    const receipt = raw ? (JSON.parse(Buffer.from(raw, "base64").toString()) as Receipt) : null;
+    return { status: paid.status, body: answer, receipt };
+  }
+
   async function post(path: string, payload: unknown): Promise<AskResult> {
+    const escrow = await postEscrow(path, payload);
+    if (escrow) return escrow;
+    // No escrow option offered: fall back to the x402 exact scheme on Sepolia.
     const res = await paidFetch(NODE + path, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
