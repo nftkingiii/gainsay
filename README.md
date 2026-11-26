@@ -65,3 +65,7 @@ Command-line tools: `npm run scan 2` lists recent settleable proposals for free.
 - The checks above ran after their windows closed. A check inside an open window, and a live `Wrong` verdict, haven't happened yet.
 - Gainsay never proposes, disputes or posts a bond.
 - Proposer demand is a hypothesis; no proposer has used Gainsay yet.
+
+## Solana tab
+
+Gainsay also audits the sports markets Jupiter Predict lists on Solana (Polymarket and Kalshi). `src/solana/` maps a Jupiter event to a game, buys the final score through Telegraph once, and judges the venue's recorded result for the moneyline and every total and spread on that game. Each market's on-chain MarketResult account is read from Solana mainnet (layout from the program's own IDL) and compared with the API's result. `data/solana-record.json` holds the paid checks run so far. Set `JUPITER_API_KEY` to send an `x-api-key` header; reads also worked without one when tested.

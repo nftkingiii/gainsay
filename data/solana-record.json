@@ -1,1 +1,1670 @@
-[]
+[
+ {
+  "eventId": "POLY-1362205",
+  "provider": "polymarket",
+  "title": "Suns vs. Rockets",
+  "league": "nba",
+  "kickoff": "2026-11-26T01:30:00.000Z",
+  "checkedAt": "2026-11-26T09:58:24.107Z",
+  "venue": {
+   "headline": "Rockets",
+   "markets": [
+    {
+     "label": "Suns vs Rockets",
+     "type": "moneyline",
+     "result": "Rockets",
+     "accounts": [
+      {
+       "marketId": "POLY-6956406-0",
+       "pubkey": "82HuK7fCnT9xG6dLJEuR42VrsXZtMH9EHpJZ5X3PqTZq",
+       "explorer": "https://explorer.solana.com/address/82HuK7fCnT9xG6dLJEuR42VrsXZtMH9EHpJZ5X3PqTZq",
+       "apiResult": "no",
+       "onChain": {
+        "outcome": "no",
+        "settledAt": "2026-11-26T04:20:56.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      },
+      {
+       "marketId": "POLY-6956406-1",
+       "pubkey": "DzdGX81Jr5bZusWQ5riYun7CGUddr2R31V5FbBBkKRiQ",
+       "explorer": "https://explorer.solana.com/address/DzdGX81Jr5bZusWQ5riYun7CGUddr2R31V5FbBBkKRiQ",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-11-26T04:20:55.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 2,
+   "matched": 2,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "POLY-6956406",
+     "type": "moneyline",
+     "label": "Suns vs Rockets",
+     "venue": "Rockets",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 65,
+    "holds": 65,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "7330",
+     "signalHash": "0x19f90914c8a88f667cf2c0a96050d4eb6d67f2c5acb849c0b6add0697b858bb6",
+     "receiptHash": "0x99cbec59a030c5604e3bf1604f7d834bd7ff1b773990115e312d6f69e897ccae",
+     "costUsd": 0.01,
+     "source": "sportwire:english wikipedia",
+     "home": "Houston Rockets",
+     "away": "Phoenix Suns",
+     "homeScore": 116,
+     "awayScore": 104,
+     "finished": true,
+     "kickoff": null,
+     "gameDate": "2026-11-25"
+    }
+   ],
+   "rejected": [],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "SportWire score, dated",
+    "minerId": "7330"
+   }
+  ]
+ },
+ {
+  "eventId": "POLY-1278256",
+  "provider": "polymarket",
+  "title": "Utah vs. Wild",
+  "league": "nhl",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "checkedAt": "2026-11-26T09:53:18.859Z",
+  "venue": {
+   "headline": "Utah",
+   "markets": [
+    {
+     "label": "Utah vs Wild",
+     "type": "moneyline",
+     "result": "Utah",
+     "accounts": [
+      {
+       "marketId": "POLY-6389425-0",
+       "pubkey": "6DkcmJhT99vaCTYCsToBUSz1gnWX1aNCnZQkGXPi3Pir",
+       "explorer": "https://explorer.solana.com/address/6DkcmJhT99vaCTYCsToBUSz1gnWX1aNCnZQkGXPi3Pir",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-11-26T04:08:00.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 1,
+   "matched": 1,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "no answer was about this game",
+  "audit": {
+   "headline": "no_independent_source",
+   "note": "no answer was about this game",
+   "main": [
+    {
+     "id": "POLY-6389425",
+     "type": "moneyline",
+     "label": "Utah vs Wild",
+     "venue": "Utah",
+     "audit": "no_independent_source",
+     "note": "no answer was about this game"
+    }
+   ],
+   "lines": {
+    "total": 14,
+    "holds": 0,
+    "wrong": 0,
+    "other": 14,
+    "wrongLabels": []
+   },
+   "accepted": [],
+   "rejected": [
+    "answer is about Jets at Bruins, not Utah v Wild",
+    "answer is about Rangers at Sabres, not Utah v Wild",
+    "answer is about Hurricanes at Lightning, not Utah v Wild",
+    "answer is about Senators at Panthers, not Utah v Wild",
+    "answer is about Blues at Islanders, not Utah v Wild",
+    "answer is about Flames at Penguins, not Utah v Wild"
+   ],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "NHL official",
+    "minerId": "44002"
+   }
+  ]
+ },
+ {
+  "eventId": "POLY-1362204",
+  "provider": "polymarket",
+  "title": "Nets vs. Bucks",
+  "league": "nba",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "checkedAt": "2026-11-26T09:58:12.422Z",
+  "venue": {
+   "headline": "Nets",
+   "markets": [
+    {
+     "label": "Nets vs Bucks",
+     "type": "moneyline",
+     "result": "Nets",
+     "accounts": [
+      {
+       "marketId": "POLY-6956405-0",
+       "pubkey": "BtGqzKVzWsV1nPXmFxxQDbXeeM4HNjRfkSodEuFUtR2b",
+       "explorer": "https://explorer.solana.com/address/BtGqzKVzWsV1nPXmFxxQDbXeeM4HNjRfkSodEuFUtR2b",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-11-26T03:41:36.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      },
+      {
+       "marketId": "POLY-6956405-1",
+       "pubkey": "DgQmuLrjaXbyqsKQpwdotfGT5bPygUbTXPFHaJY2C6SZ",
+       "explorer": "https://explorer.solana.com/address/DgQmuLrjaXbyqsKQpwdotfGT5bPygUbTXPFHaJY2C6SZ",
+       "apiResult": "no",
+       "onChain": {
+        "outcome": "no",
+        "settledAt": "2026-11-26T03:41:36.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 2,
+   "matched": 2,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "POLY-6956405",
+     "type": "moneyline",
+     "label": "Nets vs Bucks",
+     "venue": "Nets",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 66,
+    "holds": 66,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "7330",
+     "signalHash": "0x3be8db33b61032ec562cc3e3188aaedf42c04a3f5892dcc33e26ba3449889f6f",
+     "receiptHash": "0xdc198e047d28fc3c18ba250b17ef781763b561392bdd300f651aa450e7a10383",
+     "costUsd": 0.01,
+     "source": "sportwire:english wikipedia",
+     "home": "Milwaukee Bucks",
+     "away": "Brooklyn Nets",
+     "homeScore": 97,
+     "awayScore": 104,
+     "finished": true,
+     "kickoff": null,
+     "gameDate": "2026-11-25"
+    }
+   ],
+   "rejected": [],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "SportWire score, dated",
+    "minerId": "7330"
+   }
+  ]
+ },
+ {
+  "eventId": "POLY-1319644",
+  "provider": "polymarket",
+  "title": "Packers vs. Rams",
+  "league": "nfl",
+  "kickoff": "2026-11-26T01:00:00.000Z",
+  "checkedAt": "2026-11-26T09:58:36.259Z",
+  "venue": {
+   "headline": "Rams",
+   "markets": [
+    {
+     "label": "Packers vs Rams",
+     "type": "moneyline",
+     "result": "Rams",
+     "accounts": [
+      {
+       "marketId": "POLY-6710260-0",
+       "pubkey": "AsXc3NKwaijoB8M17N9dzMPEve8tLJnVqzz2KGQGgqVx",
+       "explorer": "https://explorer.solana.com/address/AsXc3NKwaijoB8M17N9dzMPEve8tLJnVqzz2KGQGgqVx",
+       "apiResult": "no",
+       "onChain": {
+        "outcome": "no",
+        "settledAt": "2026-11-26T04:47:38.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      },
+      {
+       "marketId": "POLY-6710260-1",
+       "pubkey": "FDHAjF6Z8Y3WBFJPZp4h1HrWcPqNF1CCjzCdTWSb71ii",
+       "explorer": "https://explorer.solana.com/address/FDHAjF6Z8Y3WBFJPZp4h1HrWcPqNF1CCjzCdTWSb71ii",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-11-26T04:47:37.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 7,
+   "matched": 7,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "POLY-6710260",
+     "type": "moneyline",
+     "label": "Packers vs Rams",
+     "venue": "Rams",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 55,
+    "holds": 55,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "20261117",
+     "signalHash": "0x712cd6d85c015306ca969eb9a3deece60642f90cbbaf42e9eee634499dea305b",
+     "receiptHash": "0x2835ef859cd9ebd62f0e87824d4698fd04669cb5dd8114d5dd5cc875ab383af5",
+     "costUsd": 0.01,
+     "source": "takar-outcome:espn",
+     "home": "Los Angeles Rams",
+     "away": "Green Bay Packers",
+     "homeScore": 26,
+     "awayScore": 13,
+     "finished": true,
+     "kickoff": "2026-11-26T01:00:00.000Z"
+    }
+   ],
+   "rejected": [],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "Takar Outcome, ESPN scoreboard",
+    "minerId": "20261117"
+   }
+  ]
+ },
+ {
+  "eventId": "POLY-1362202",
+  "provider": "polymarket",
+  "title": "Timberwolves vs. Thunder",
+  "league": "nba",
+  "kickoff": "2026-11-26T00:30:00.000Z",
+  "checkedAt": "2026-11-26T09:57:47.952Z",
+  "venue": {
+   "headline": "Timberwolves",
+   "markets": [
+    {
+     "label": "Timberwolves vs Thunder",
+     "type": "moneyline",
+     "result": "Timberwolves",
+     "accounts": [
+      {
+       "marketId": "POLY-6956403-0",
+       "pubkey": "CjW9hsKuWS4fYizLJHio1hCffo5CbFo27dZf1n934tgq",
+       "explorer": "https://explorer.solana.com/address/CjW9hsKuWS4fYizLJHio1hCffo5CbFo27dZf1n934tgq",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-11-26T03:26:22.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      },
+      {
+       "marketId": "POLY-6956403-1",
+       "pubkey": "CUvJdZjJckzwR6J62oYGiBvR4p3tGjSGE4j21w5qnS8T",
+       "explorer": "https://explorer.solana.com/address/CUvJdZjJckzwR6J62oYGiBvR4p3tGjSGE4j21w5qnS8T",
+       "apiResult": "no",
+       "onChain": {
+        "outcome": "no",
+        "settledAt": "2026-11-26T03:26:23.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 2,
+   "matched": 2,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "POLY-6956403",
+     "type": "moneyline",
+     "label": "Timberwolves vs Thunder",
+     "venue": "Timberwolves",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 65,
+    "holds": 65,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "7330",
+     "signalHash": "0xb00470a7936e100b4d7ffcffcd65f453dd8fe0e7d54e325c6ac09d1d6a6fee34",
+     "receiptHash": "0xe9f9ed8b43a73211fdf7a1c1fbb93f241cb0fec0d06f992e55a89a1a95484406",
+     "costUsd": 0.01,
+     "source": "sportwire:english wikipedia",
+     "home": "Oklahoma City Thunder",
+     "away": "Minnesota Timberwolves",
+     "homeScore": 106,
+     "awayScore": 113,
+     "finished": true,
+     "kickoff": null,
+     "gameDate": "2026-11-25"
+    }
+   ],
+   "rejected": [],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "SportWire score, dated",
+    "minerId": "7330"
+   }
+  ]
+ },
+ {
+  "eventId": "POLY-1362201",
+  "provider": "polymarket",
+  "title": "Cavaliers vs. Knicks",
+  "league": "nba",
+  "kickoff": "2026-11-26T00:30:00.000Z",
+  "checkedAt": "2026-11-26T09:57:59.765Z",
+  "venue": {
+   "headline": "Knicks",
+   "markets": [
+    {
+     "label": "Cavaliers vs Knicks",
+     "type": "moneyline",
+     "result": "Knicks",
+     "accounts": [
+      {
+       "marketId": "POLY-6956402-0",
+       "pubkey": "CvJdMRoiEDgRBhyEsXs5MyRAjEdSygkauXrD2u9NepNn",
+       "explorer": "https://explorer.solana.com/address/CvJdMRoiEDgRBhyEsXs5MyRAjEdSygkauXrD2u9NepNn",
+       "apiResult": "no",
+       "onChain": {
+        "outcome": "no",
+        "settledAt": "2026-11-26T03:15:41.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      },
+      {
+       "marketId": "POLY-6956402-1",
+       "pubkey": "558a912dDiddEQsLZm4NmqQUf2eLiZ1cShkB2hS7R3jV",
+       "explorer": "https://explorer.solana.com/address/558a912dDiddEQsLZm4NmqQUf2eLiZ1cShkB2hS7R3jV",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-11-26T03:15:40.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 2,
+   "matched": 2,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "POLY-6956402",
+     "type": "moneyline",
+     "label": "Cavaliers vs Knicks",
+     "venue": "Knicks",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 64,
+    "holds": 64,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "7330",
+     "signalHash": "0x0fc498af68bacfc7e94a7f674e01b505f9481fe4db3484491f52cafa08e33800",
+     "receiptHash": "0x3fb44beb8310c84e966ada7385c8ff993062c848462ec12063d636f9909087af",
+     "costUsd": 0.01,
+     "source": "sportwire:english wikipedia",
+     "home": "New York Knicks",
+     "away": "Cleveland Cavaliers",
+     "homeScore": 121,
+     "awayScore": 102,
+     "finished": true,
+     "kickoff": null,
+     "gameDate": "2026-11-25"
+    }
+   ],
+   "rejected": [],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "SportWire score, dated",
+    "minerId": "7330"
+   }
+  ]
+ },
+ {
+  "eventId": "POLY-1278254",
+  "provider": "polymarket",
+  "title": "Jets vs. Bruins",
+  "league": "nhl",
+  "kickoff": "2026-11-26T00:00:00.000Z",
+  "checkedAt": "2026-11-26T09:55:16.342Z",
+  "venue": {
+   "headline": "Jets",
+   "markets": [
+    {
+     "label": "Jets vs Bruins",
+     "type": "moneyline",
+     "result": "Jets",
+     "accounts": []
+    }
+   ]
+  },
+  "chain": {
+   "read": 0,
+   "matched": 0,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "POLY-6389415",
+     "type": "moneyline",
+     "label": "Jets vs Bruins",
+     "venue": "Jets",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 14,
+    "holds": 14,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "44002",
+     "signalHash": "0x4c9f65a73ede6ee79d4f328314663bf129734470fd86409e06fa73fd9432b146",
+     "receiptHash": "0xc4fc2892755a4c58f1d0d759eed94b9951c2dd2803decb28129f1f294b38379e",
+     "costUsd": 0.01,
+     "source": "nhl-official",
+     "home": "Bruins",
+     "away": "Jets",
+     "homeScore": 2,
+     "awayScore": 4,
+     "finished": true,
+     "kickoff": "2026-11-26T00:00:00.000Z"
+    }
+   ],
+   "rejected": [
+    "answer is about Rangers at Sabres, not Jets v Bruins",
+    "answer is about Hurricanes at Lightning, not Jets v Bruins",
+    "answer is about Senators at Panthers, not Jets v Bruins",
+    "answer is about Blues at Islanders, not Jets v Bruins",
+    "answer is about Flames at Penguins, not Jets v Bruins",
+    "answer is about Flyers at Capitals, not Jets v Bruins"
+   ],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "NHL official",
+    "minerId": "44002"
+   }
+  ]
+ },
+ {
+  "eventId": "POLY-1278253",
+  "provider": "polymarket",
+  "title": "Rangers vs. Sabres",
+  "league": "nhl",
+  "kickoff": "2026-11-26T00:00:00.000Z",
+  "checkedAt": "2026-11-26T09:55:32.319Z",
+  "venue": {
+   "headline": "Sabres",
+   "markets": [
+    {
+     "label": "Rangers vs Sabres",
+     "type": "moneyline",
+     "result": "Sabres",
+     "accounts": [
+      {
+       "marketId": "POLY-6389410-1",
+       "pubkey": "Btbf3kZUdEteYm6AmYnBHq8mEwN8ZSWUhjpDzVNhpZjs",
+       "explorer": "https://explorer.solana.com/address/Btbf3kZUdEteYm6AmYnBHq8mEwN8ZSWUhjpDzVNhpZjs",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-11-26T02:54:02.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 1,
+   "matched": 1,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "POLY-6389410",
+     "type": "moneyline",
+     "label": "Rangers vs Sabres",
+     "venue": "Sabres",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 14,
+    "holds": 14,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "44002",
+     "signalHash": "0x4c9f65a73ede6ee79d4f328314663bf129734470fd86409e06fa73fd9432b146",
+     "receiptHash": "0xc4fc2892755a4c58f1d0d759eed94b9951c2dd2803decb28129f1f294b38379e",
+     "costUsd": 0.01,
+     "source": "nhl-official",
+     "home": "Sabres",
+     "away": "Rangers",
+     "homeScore": 5,
+     "awayScore": 1,
+     "finished": true,
+     "kickoff": "2026-11-26T00:00:00.000Z"
+    }
+   ],
+   "rejected": [
+    "answer is about Jets at Bruins, not Rangers v Sabres",
+    "answer is about Hurricanes at Lightning, not Rangers v Sabres",
+    "answer is about Senators at Panthers, not Rangers v Sabres",
+    "answer is about Blues at Islanders, not Rangers v Sabres",
+    "answer is about Flames at Penguins, not Rangers v Sabres",
+    "answer is about Flyers at Capitals, not Rangers v Sabres"
+   ],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "NHL official",
+    "minerId": "44002"
+   }
+  ]
+ },
+ {
+  "eventId": "POLY-1278250",
+  "provider": "polymarket",
+  "title": "Hurricanes vs. Lightning",
+  "league": "nhl",
+  "kickoff": "2026-11-26T00:00:00.000Z",
+  "checkedAt": "2026-11-26T09:55:51.538Z",
+  "venue": {
+   "headline": "Hurricanes",
+   "markets": [
+    {
+     "label": "Hurricanes vs Lightning",
+     "type": "moneyline",
+     "result": "Hurricanes",
+     "accounts": [
+      {
+       "marketId": "POLY-6389395-0",
+       "pubkey": "BEaHsByUCAEJSRP6CjzxEmj26QDGXBBQY6gjV4avCLUC",
+       "explorer": "https://explorer.solana.com/address/BEaHsByUCAEJSRP6CjzxEmj26QDGXBBQY6gjV4avCLUC",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-11-26T02:53:04.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 1,
+   "matched": 1,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "POLY-6389395",
+     "type": "moneyline",
+     "label": "Hurricanes vs Lightning",
+     "venue": "Hurricanes",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 14,
+    "holds": 14,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "44002",
+     "signalHash": "0x4c9f65a73ede6ee79d4f328314663bf129734470fd86409e06fa73fd9432b146",
+     "receiptHash": "0xc4fc2892755a4c58f1d0d759eed94b9951c2dd2803decb28129f1f294b38379e",
+     "costUsd": 0.01,
+     "source": "nhl-official",
+     "home": "Lightning",
+     "away": "Hurricanes",
+     "homeScore": 1,
+     "awayScore": 3,
+     "finished": true,
+     "kickoff": "2026-11-26T00:00:00.000Z"
+    }
+   ],
+   "rejected": [
+    "answer is about Jets at Bruins, not Hurricanes v Lightning",
+    "answer is about Rangers at Sabres, not Hurricanes v Lightning",
+    "answer is about Senators at Panthers, not Hurricanes v Lightning",
+    "answer is about Blues at Islanders, not Hurricanes v Lightning",
+    "answer is about Flames at Penguins, not Hurricanes v Lightning",
+    "answer is about Flyers at Capitals, not Hurricanes v Lightning"
+   ],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "NHL official",
+    "minerId": "44002"
+   }
+  ]
+ },
+ {
+  "eventId": "POLY-1278249",
+  "provider": "polymarket",
+  "title": "Senators vs. Panthers",
+  "league": "nhl",
+  "kickoff": "2026-11-26T00:00:00.000Z",
+  "checkedAt": "2026-11-26T09:56:50.120Z",
+  "venue": {
+   "headline": "Panthers",
+   "markets": [
+    {
+     "label": "Senators vs Panthers",
+     "type": "moneyline",
+     "result": "Panthers",
+     "accounts": [
+      {
+       "marketId": "POLY-6389390-0",
+       "pubkey": "DtzYkJQFWDMJJ1QWebJ2kLMbyYLMkmZQPaeFbUNZgV8W",
+       "explorer": "https://explorer.solana.com/address/DtzYkJQFWDMJJ1QWebJ2kLMbyYLMkmZQPaeFbUNZgV8W",
+       "apiResult": "no",
+       "onChain": {
+        "outcome": "no",
+        "settledAt": "2026-11-26T03:11:17.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      },
+      {
+       "marketId": "POLY-6389390-1",
+       "pubkey": "7cgtD5t5tEEroU9vCWHVkXLXWucG9NJMYcpjcFZtuBD7",
+       "explorer": "https://explorer.solana.com/address/7cgtD5t5tEEroU9vCWHVkXLXWucG9NJMYcpjcFZtuBD7",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-11-26T03:11:16.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 2,
+   "matched": 2,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "POLY-6389390",
+     "type": "moneyline",
+     "label": "Senators vs Panthers",
+     "venue": "Panthers",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 14,
+    "holds": 14,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "44002",
+     "signalHash": "0x4c9f65a73ede6ee79d4f328314663bf129734470fd86409e06fa73fd9432b146",
+     "receiptHash": "0xc4fc2892755a4c58f1d0d759eed94b9951c2dd2803decb28129f1f294b38379e",
+     "costUsd": 0.01,
+     "source": "nhl-official",
+     "home": "Panthers",
+     "away": "Senators",
+     "homeScore": 5,
+     "awayScore": 3,
+     "finished": true,
+     "kickoff": "2026-11-26T00:00:00.000Z"
+    }
+   ],
+   "rejected": [
+    "answer is about Jets at Bruins, not Senators v Panthers",
+    "answer is about Rangers at Sabres, not Senators v Panthers",
+    "answer is about Hurricanes at Lightning, not Senators v Panthers",
+    "answer is about Blues at Islanders, not Senators v Panthers",
+    "answer is about Flames at Penguins, not Senators v Panthers",
+    "answer is about Flyers at Capitals, not Senators v Panthers"
+   ],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "NHL official",
+    "minerId": "44002"
+   }
+  ]
+ },
+ {
+  "eventId": "POLY-1278252",
+  "provider": "polymarket",
+  "title": "Blues vs. Islanders",
+  "league": "nhl",
+  "kickoff": "2026-11-26T00:00:00.000Z",
+  "checkedAt": "2026-11-26T09:57:01.732Z",
+  "venue": {
+   "headline": "Islanders",
+   "markets": [
+    {
+     "label": "Blues vs Islanders",
+     "type": "moneyline",
+     "result": "Islanders",
+     "accounts": []
+    }
+   ]
+  },
+  "chain": {
+   "read": 0,
+   "matched": 0,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "POLY-6389405",
+     "type": "moneyline",
+     "label": "Blues vs Islanders",
+     "venue": "Islanders",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 14,
+    "holds": 14,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "44002",
+     "signalHash": "0x4c9f65a73ede6ee79d4f328314663bf129734470fd86409e06fa73fd9432b146",
+     "receiptHash": "0xc4fc2892755a4c58f1d0d759eed94b9951c2dd2803decb28129f1f294b38379e",
+     "costUsd": 0.01,
+     "source": "nhl-official",
+     "home": "Islanders",
+     "away": "Blues",
+     "homeScore": 3,
+     "awayScore": 2,
+     "finished": true,
+     "kickoff": "2026-11-26T00:00:00.000Z"
+    }
+   ],
+   "rejected": [
+    "answer is about Jets at Bruins, not Blues v Islanders",
+    "answer is about Rangers at Sabres, not Blues v Islanders",
+    "answer is about Hurricanes at Lightning, not Blues v Islanders",
+    "answer is about Senators at Panthers, not Blues v Islanders",
+    "answer is about Flames at Penguins, not Blues v Islanders",
+    "answer is about Flyers at Capitals, not Blues v Islanders"
+   ],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "NHL official",
+    "minerId": "44002"
+   }
+  ]
+ },
+ {
+  "eventId": "POLY-1278251",
+  "provider": "polymarket",
+  "title": "Flames vs. Penguins",
+  "league": "nhl",
+  "kickoff": "2026-11-26T00:00:00.000Z",
+  "checkedAt": "2026-11-26T09:57:15.435Z",
+  "venue": {
+   "headline": "Flames",
+   "markets": [
+    {
+     "label": "Flames vs Penguins",
+     "type": "moneyline",
+     "result": "Flames",
+     "accounts": [
+      {
+       "marketId": "POLY-6389400-0",
+       "pubkey": "3twBkuSw7Qx5EcJdEAejd9AMT9kw2E71TcFeyz7pPMDn",
+       "explorer": "https://explorer.solana.com/address/3twBkuSw7Qx5EcJdEAejd9AMT9kw2E71TcFeyz7pPMDn",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-11-26T02:58:02.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 1,
+   "matched": 1,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "POLY-6389400",
+     "type": "moneyline",
+     "label": "Flames vs Penguins",
+     "venue": "Flames",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 14,
+    "holds": 14,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "44002",
+     "signalHash": "0x4c9f65a73ede6ee79d4f328314663bf129734470fd86409e06fa73fd9432b146",
+     "receiptHash": "0xc4fc2892755a4c58f1d0d759eed94b9951c2dd2803decb28129f1f294b38379e",
+     "costUsd": 0.01,
+     "source": "nhl-official",
+     "home": "Penguins",
+     "away": "Flames",
+     "homeScore": 3,
+     "awayScore": 6,
+     "finished": true,
+     "kickoff": "2026-11-26T00:00:00.000Z"
+    }
+   ],
+   "rejected": [
+    "answer is about Jets at Bruins, not Flames v Penguins",
+    "answer is about Rangers at Sabres, not Flames v Penguins",
+    "answer is about Hurricanes at Lightning, not Flames v Penguins",
+    "answer is about Senators at Panthers, not Flames v Penguins",
+    "answer is about Blues at Islanders, not Flames v Penguins",
+    "answer is about Flyers at Capitals, not Flames v Penguins"
+   ],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "NHL official",
+    "minerId": "44002"
+   }
+  ]
+ },
+ {
+  "eventId": "POLY-1362200",
+  "provider": "polymarket",
+  "title": "Bulls vs. Hornets",
+  "league": "nba",
+  "kickoff": "2026-11-26T00:00:00.000Z",
+  "checkedAt": "2026-11-26T09:57:26.494Z",
+  "venue": {
+   "headline": "Bulls",
+   "markets": [
+    {
+     "label": "Bulls vs Hornets",
+     "type": "moneyline",
+     "result": "Bulls",
+     "accounts": [
+      {
+       "marketId": "POLY-6956401-0",
+       "pubkey": "5jGmnKtA3exL3pv5dPDbhpqbqKHmqPFxx1LbBdQrmz9M",
+       "explorer": "https://explorer.solana.com/address/5jGmnKtA3exL3pv5dPDbhpqbqKHmqPFxx1LbBdQrmz9M",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-11-26T02:43:05.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      },
+      {
+       "marketId": "POLY-6956401-1",
+       "pubkey": "9YEnSXxv5N7yKjjHUNUe4EC9dbPJMLCgwZxgXnYhgKA3",
+       "explorer": "https://explorer.solana.com/address/9YEnSXxv5N7yKjjHUNUe4EC9dbPJMLCgwZxgXnYhgKA3",
+       "apiResult": "no",
+       "onChain": {
+        "outcome": "no",
+        "settledAt": "2026-11-26T02:43:07.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 4,
+   "matched": 4,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "POLY-6956401",
+     "type": "moneyline",
+     "label": "Bulls vs Hornets",
+     "venue": "Bulls",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 66,
+    "holds": 66,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "7330",
+     "signalHash": "0x2ef564903e5b8322b7c0dad6d328d9722bcb6f7c2bc59babb74b30114b29e832",
+     "receiptHash": "0x46189e2ea84f6440399d821048c93b2f28536f146e90bd9dd4beacb9759ced05",
+     "costUsd": 0.01,
+     "source": "sportwire:english wikipedia",
+     "home": "Charlotte Hornets",
+     "away": "Chicago Bulls",
+     "homeScore": 105,
+     "awayScore": 107,
+     "finished": true,
+     "kickoff": null,
+     "gameDate": "2026-11-25"
+    }
+   ],
+   "rejected": [],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "SportWire score, dated",
+    "minerId": "7330"
+   }
+  ]
+ },
+ {
+  "eventId": "POLY-1326350",
+  "provider": "polymarket",
+  "title": "Club Brugge KV vs. Liverpool FC",
+  "league": "ucl",
+  "kickoff": "2026-11-25T20:00:00.000Z",
+  "checkedAt": "2026-11-26T09:59:19.131Z",
+  "venue": {
+   "headline": "Liverpool FC",
+   "markets": [
+    {
+     "label": "Club Brugge KV win",
+     "type": "team_win",
+     "result": "No",
+     "accounts": [
+      {
+       "marketId": "POLY-6757550",
+       "pubkey": "HUBHCUUyWkxsn1FmF9dzopXQkwR6JmrbEJoRRR3rs6Wh",
+       "explorer": "https://explorer.solana.com/address/HUBHCUUyWkxsn1FmF9dzopXQkwR6JmrbEJoRRR3rs6Wh",
+       "apiResult": "no",
+       "onChain": {
+        "outcome": "no",
+        "settledAt": "2026-11-25T22:12:34.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    },
+    {
+     "label": "Draw",
+     "type": "draw",
+     "result": "No",
+     "accounts": []
+    },
+    {
+     "label": "Liverpool FC win",
+     "type": "team_win",
+     "result": "Yes",
+     "accounts": [
+      {
+       "marketId": "POLY-6757552",
+       "pubkey": "DC7rBXgYBkqikzVSxSpok3PGmSDUYZ6NXJUkMmfGv8in",
+       "explorer": "https://explorer.solana.com/address/DC7rBXgYBkqikzVSxSpok3PGmSDUYZ6NXJUkMmfGv8in",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-11-25T22:12:34.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 3,
+   "matched": 3,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "POLY-6757550",
+     "type": "team_win",
+     "label": "Club Brugge KV win",
+     "venue": "No",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    },
+    {
+     "id": "POLY-6757551",
+     "type": "draw",
+     "label": "Draw",
+     "venue": "No",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    },
+    {
+     "id": "POLY-6757552",
+     "type": "team_win",
+     "label": "Liverpool FC win",
+     "venue": "Yes",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 19,
+    "holds": 19,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "20261117",
+     "signalHash": "0x3054aff052c55a75225e19748d068c9aef9459d0709391423bc14d9c3946c44b",
+     "receiptHash": "0x4120f81d473cd4471e8ca9b57085be45268361da63e0ba9adf9d60fcd5c70f0c",
+     "costUsd": 0.01,
+     "source": "takar-outcome:espn",
+     "home": "Club Brugge",
+     "away": "Liverpool",
+     "homeScore": 0,
+     "awayScore": 3,
+     "finished": true,
+     "kickoff": "2026-11-25T20:00:00.000Z"
+    }
+   ],
+   "rejected": [],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "Takar Outcome, ESPN scoreboard",
+    "minerId": "20261117"
+   }
+  ]
+ },
+ {
+  "eventId": "POLY-1326342",
+  "provider": "polymarket",
+  "title": "Paris Saint-Germain FC vs. AS Roma",
+  "league": "ucl",
+  "kickoff": "2026-11-25T20:00:00.000Z",
+  "checkedAt": "2026-11-26T09:59:37.288Z",
+  "venue": {
+   "headline": "Draw",
+   "markets": [
+    {
+     "label": "Paris Saint-Germain FC win",
+     "type": "team_win",
+     "result": "No",
+     "accounts": [
+      {
+       "marketId": "POLY-6757458",
+       "pubkey": "ARc5XH31fQtav73saKoJ7ZbnLHv7Mr4VDbcS6Ji1Qz7Q",
+       "explorer": "https://explorer.solana.com/address/ARc5XH31fQtav73saKoJ7ZbnLHv7Mr4VDbcS6Ji1Qz7Q",
+       "apiResult": "no",
+       "onChain": {
+        "outcome": "no",
+        "settledAt": "2026-11-25T22:12:22.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    },
+    {
+     "label": "Draw",
+     "type": "draw",
+     "result": "Yes",
+     "accounts": [
+      {
+       "marketId": "POLY-6757459",
+       "pubkey": "FchNGAHVh4o8mFvVHNrhkyseA6xgjMsMe7uoJQBJ3hbw",
+       "explorer": "https://explorer.solana.com/address/FchNGAHVh4o8mFvVHNrhkyseA6xgjMsMe7uoJQBJ3hbw",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-11-25T22:12:29.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    },
+    {
+     "label": "AS Roma win",
+     "type": "team_win",
+     "result": "No",
+     "accounts": [
+      {
+       "marketId": "POLY-6757460",
+       "pubkey": "3nPh4qfpwgySD94fkjug3XKMvm5U8EnjMzkLVRpxtT5N",
+       "explorer": "https://explorer.solana.com/address/3nPh4qfpwgySD94fkjug3XKMvm5U8EnjMzkLVRpxtT5N",
+       "apiResult": "no",
+       "onChain": {
+        "outcome": "no",
+        "settledAt": "2026-11-25T22:12:23.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 11,
+   "matched": 11,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "POLY-6757458",
+     "type": "team_win",
+     "label": "Paris Saint-Germain FC win",
+     "venue": "No",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    },
+    {
+     "id": "POLY-6757459",
+     "type": "draw",
+     "label": "Draw",
+     "venue": "Yes",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    },
+    {
+     "id": "POLY-6757460",
+     "type": "team_win",
+     "label": "AS Roma win",
+     "venue": "No",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 19,
+    "holds": 19,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "20261117",
+     "signalHash": "0x8d906d813aad238052a48bc11d3d70a57be010454eb5bdd8bfeeb1f27ba836d3",
+     "receiptHash": "0xd27889d1e9ce08bc01ae1b8ddd7209da705a9bd04fc1a7005e02ad4944262a21",
+     "costUsd": 0.01,
+     "source": "takar-outcome:espn",
+     "home": "Paris Saint-Germain",
+     "away": "AS Roma",
+     "homeScore": 2,
+     "awayScore": 2,
+     "finished": true,
+     "kickoff": "2026-11-25T20:00:00.000Z"
+    }
+   ],
+   "rejected": [],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "Takar Outcome, ESPN scoreboard",
+    "minerId": "20261117"
+   }
+  ]
+ },
+ {
+  "eventId": "KXNBAGAME-26JAN30TORORL",
+  "provider": "kalshi",
+  "title": "Toronto at Orlando",
+  "league": "nba",
+  "kickoff": "2026-01-31T00:30:00.000Z",
+  "checkedAt": "2026-11-26T10:00:19.360Z",
+  "venue": {
+   "headline": "Orlando",
+   "markets": [
+    {
+     "label": "Toronto at Orlando",
+     "type": "moneyline",
+     "result": "Orlando",
+     "accounts": [
+      {
+       "marketId": "KXNBAGAME-26JAN30TORORL-TOR",
+       "pubkey": "7pUHwdsAzFFn2eJssBou3eWDzbYfVnC32HVdFSzxwsWq",
+       "explorer": "https://explorer.solana.com/address/7pUHwdsAzFFn2eJssBou3eWDzbYfVnC32HVdFSzxwsWq",
+       "apiResult": "no",
+       "onChain": {
+        "outcome": "no",
+        "settledAt": "2026-01-31T04:05:05.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      },
+      {
+       "marketId": "KXNBAGAME-26JAN30TORORL-ORL",
+       "pubkey": "3cRZGwmJPeAZQRScfCq81Tp85NGYtrwb5wP6NDgeqLDB",
+       "explorer": "https://explorer.solana.com/address/3cRZGwmJPeAZQRScfCq81Tp85NGYtrwb5wP6NDgeqLDB",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-01-31T04:05:13.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 2,
+   "matched": 2,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "checked",
+  "note": "the final score supports this proposal",
+  "audit": {
+   "headline": "holds",
+   "note": "the final score supports this proposal",
+   "main": [
+    {
+     "id": "KXNBAGAME-26JAN30TORORL",
+     "type": "moneyline",
+     "label": "Toronto at Orlando",
+     "venue": "Orlando",
+     "audit": "holds",
+     "note": "the final score supports this proposal"
+    }
+   ],
+   "lines": {
+    "total": 0,
+    "holds": 0,
+    "wrong": 0,
+    "other": 0,
+    "wrongLabels": []
+   },
+   "accepted": [
+    {
+     "minerId": "7330",
+     "signalHash": "0x6366b1bdbcf83560b596fac8c467417a7c8a0dc413d92973e7d0a10549625b65",
+     "receiptHash": "0x57e50163b229b30371aa8bb477b877ea3e00a1d1ff0a464debae65aa3c5a66ee",
+     "costUsd": 0.01,
+     "source": "sportwire:english wikipedia",
+     "home": "Orlando Magic",
+     "away": "Toronto Raptors",
+     "homeScore": 130,
+     "awayScore": 120,
+     "finished": true,
+     "kickoff": null,
+     "gameDate": "2026-01-30"
+    }
+   ],
+   "rejected": [],
+   "costUsd": 0.01
+  },
+  "plan": [
+   {
+    "label": "SportWire score, dated",
+    "minerId": "7330"
+   }
+  ]
+ },
+ {
+  "eventId": "KXNBAGAME-26JAN25DALMIL",
+  "provider": "kalshi",
+  "title": "Dallas at Milwaukee",
+  "league": "nba",
+  "kickoff": "2026-01-26T00:00:00.000Z",
+  "checkedAt": "2026-11-26T09:59:54.863Z",
+  "venue": {
+   "headline": "Refund",
+   "markets": [
+    {
+     "label": "Dallas at Milwaukee",
+     "type": "moneyline",
+     "result": "Refund",
+     "accounts": [
+      {
+       "marketId": "KXNBAGAME-26JAN25DALMIL-DAL",
+       "pubkey": "vgourCkzYchFjGqaUskhdx4bFZFLoXKVVxoQxqvtX3q",
+       "explorer": "https://explorer.solana.com/address/vgourCkzYchFjGqaUskhdx4bFZFLoXKVVxoQxqvtX3q",
+       "apiResult": "refund",
+       "onChain": {
+        "outcome": "refund",
+        "settledAt": "2026-07-22T08:10:37.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      },
+      {
+       "marketId": "KXNBAGAME-26JAN25DALMIL-MIL",
+       "pubkey": "BeVZvmXwq1vnGwH7PVmztvLvZ5dRWcosvz8Xm7MUcZ7p",
+       "explorer": "https://explorer.solana.com/address/BeVZvmXwq1vnGwH7PVmztvLvZ5dRWcosvz8Xm7MUcZ7p",
+       "apiResult": "refund",
+       "onChain": {
+        "outcome": "refund",
+        "settledAt": "2026-07-22T08:10:37.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 2,
+   "matched": 2,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "failed",
+  "note": "SportWire score, dated did not return an answer. Nothing was charged for a failed call.",
+  "audit": null,
+  "plan": [
+   {
+    "label": "SportWire score, dated",
+    "minerId": "7330"
+   }
+  ]
+ },
+ {
+  "eventId": "KXNBAGAME-26JAN25DENMEM",
+  "provider": "kalshi",
+  "title": "Denver at Memphis",
+  "league": "nba",
+  "kickoff": "2026-01-25T20:30:00.000Z",
+  "checkedAt": "2026-11-26T10:00:06.637Z",
+  "venue": {
+   "headline": "Split (the venue recorded yes on both sides)",
+   "markets": [
+    {
+     "label": "Denver at Memphis",
+     "type": "moneyline",
+     "result": "Split (the venue recorded yes on both sides)",
+     "accounts": [
+      {
+       "marketId": "KXNBAGAME-26JAN25DENMEM-DEN",
+       "pubkey": "6y3GqQLwF95xJkD1yuTGiZB9SkQXk31P6AV13ZTaPbba",
+       "explorer": "https://explorer.solana.com/address/6y3GqQLwF95xJkD1yuTGiZB9SkQXk31P6AV13ZTaPbba",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-02-24T15:06:06.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      },
+      {
+       "marketId": "KXNBAGAME-26JAN25DENMEM-MEM",
+       "pubkey": "9L8pfX79Rv4FznHKAdn63Q4e9geXohapJE1uqqqczHEN",
+       "explorer": "https://explorer.solana.com/address/9L8pfX79Rv4FznHKAdn63Q4e9geXohapJE1uqqqczHEN",
+       "apiResult": "yes",
+       "onChain": {
+        "outcome": "yes",
+        "settledAt": "2026-02-24T15:06:09.000Z",
+        "claimsEnabled": true
+       },
+       "agrees": true
+      }
+     ]
+    }
+   ]
+  },
+  "chain": {
+   "read": 2,
+   "matched": 2,
+   "unread": 0
+  },
+  "testnet": true,
+  "status": "failed",
+  "note": "SportWire score, dated did not return an answer. Nothing was charged for a failed call.",
+  "audit": null,
+  "plan": [
+   {
+    "label": "SportWire score, dated",
+    "minerId": "7330"
+   }
+  ]
+ }
+]

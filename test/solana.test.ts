@@ -152,3 +152,15 @@ test("skips leagues Gainsay cannot settle", () => {
   cbb.metadata.slug = "cbb-duke-unc-2026-11-25";
   assert.equal(polymarketGame(cbb).ok, false);
 });
+
+test("every recorded paid check names its receipts and none claims a verdict without evidence", () => {
+  const record = load<{ status: string; audit: { headline: string; accepted: { signalHash: string; receiptHash: string | null }[] } | null }[]>("../../data/solana-record.json");
+  assert.ok(record.length > 0);
+  for (const r of record) {
+    if (r.status !== "checked") continue;
+    if (r.audit!.headline === "holds" || r.audit!.headline === "wrong") {
+      assert.ok(r.audit!.accepted.length > 0);
+      for (const e of r.audit!.accepted) assert.match(e.signalHash, /^0x[0-9a-f]{64}$/);
+    }
+  }
+});
