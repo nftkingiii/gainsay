@@ -64,7 +64,12 @@ export function createChecker(options: { asker: Asker | null; dailyBudgetUsd: nu
     if (budgetLeft() < 0.01) return "budget";
     spent.usd += 0.01;
     const { status, body, receipt } = await options.asker.askNative(request.minerId, request.endpoint, request.payload);
-    if (status !== 200 || typeof body.signal_hash !== "string") return "failed";
+    if (status !== 200 || typeof body.signal_hash !== "string") {
+      // A failed call is not billed, so it does not use up the day's budget.
+      spent.usd -= 0.01;
+      console.error(`ask to miner ${request.minerId} failed: ${status} ${String(body.reason ?? body.error ?? "").slice(0, 200)}`);
+      return "failed";
+    }
     const evidence = request.read(body.result, {
       minerId: request.minerId,
       signalHash: body.signal_hash,
