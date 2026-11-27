@@ -2,6 +2,8 @@
 
 Independent evidence on a Polymarket resolution before anyone posts a bond. Gainsay reads resolution proposals from UMA's oracle on Polygon, buys the final score through [Telegraph](https://anjoman.ai/docs), rejects answers about the wrong game, and settles winners, totals and spreads by arithmetic. Every verdict carries the Telegraph receipts it was built on.
 
+Live: https://gainsay.up.railway.app · Walkthrough video: https://youtu.be/EuLWRb1pdzY
+
 **Who it is for:** proposers, who post a $250 to $750 bond on each market they resolve for a reward of under a dollar to a few dollars, and lose the bond if a dispute succeeds. Holders of a position can use the same check during the challenge window.
 
 ## What a check returns
