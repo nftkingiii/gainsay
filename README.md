@@ -71,3 +71,14 @@ Command-line tools: `npm run scan 2` lists recent settleable proposals for free.
 ## Solana tab
 
 Gainsay also audits the sports markets Jupiter Predict lists on Solana (Polymarket and Kalshi). `src/solana/` maps a Jupiter event to a game, buys the final score through Telegraph once, and judges the venue's recorded result for the moneyline and every total and spread on that game. Each market's on-chain MarketResult account is read from Solana mainnet (layout from the program's own IDL) and compared with the API's result. `data/solana-record.json` holds the paid checks run so far. Set `JUPITER_API_KEY` to send an `x-api-key` header; reads also worked without one when tested.
+
+## Virtuals ACP (agent commerce)
+
+Gainsay also sells its check to other agents on Virtuals' Agent Commerce Protocol (Base mainnet), as the offering `verify_market_result` for $0.01. The seller loop (`src/acp/seller.ts`) proposes the price, waits for the buyer to fund escrow, runs the paid Telegraph check through the live service and submits the verdict with its Telegraph receipts and the Solana result accounts it read. The buyer (`src/acp/buyer.ts`) re-reads those accounts on Solana mainnet itself (two public RPCs, with retries), checks the receipt and that the delivery is for the game it asked about, and only then releases payment. If it can't verify, it rejects.
+
+Evidence, 2026-11-27:
+- Job 83064 (Spurs vs. Trail Blazers) completed: verdict holds, 65 of 65 lines, 2 of 2 accounts re-read and matched, Telegraph receipt 0xa86bd8ef70447002ed21b437932d7c3cb53fd40809cde87e64d4a4189a9ef689 (Sepolia). Escrow settled to Gainsay on Base (its USDC went from 0.30 to 0.309).
+- Job 83065 (Kings vs. Warriors) completed the same way, served by the seller running 24/7 on our server.
+- Job 83062 was rejected by a bug in our buyer's parser (the delivery itself was correct; fixed). Job 83063 was rejected because the buyer couldn't reach Solana to verify, which is the intended fail-closed behaviour.
+
+Agents: Gainsay `0x82c761e6b9e2daf8ab4697da5d4c72b9c3c850ef`, our test buyer `0x11eb2bf1672b7e32fbf691fc3c73aaad8464ba1b`. Only the $0.01 ACP fee and Base gas are real money; Telegraph calls stay on Sepolia test USDC. Both agents so far are ours: no outside buyer has hired Gainsay yet.
