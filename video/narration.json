@@ -1,0 +1,40 @@
+{
+ "voice": "af_heart", "speed": 0.85,
+ "shots": [
+  { "id": "s01", "D": 7.2, "items": [
+    { "at": 0, "text": "A proposer posts a two hundred fifty dollar bond to say who won." },
+    { "at": 4.8, "text": "If it is wrong and nobody disputes it, it stands." } ] },
+  { "id": "s02", "D": 7.2, "items": [
+    { "at": 0, "text": "Gainsay checks the resolution before the bond goes up." },
+    { "at": 4.8, "text": "Evidence is bought with test U S D C on Sepolia." } ] },
+  { "id": "s03", "D": 16.8, "items": [
+    { "at": 0, "text": "It reads the proposal and buys the final score through Telegraph." },
+    { "at": 2.4, "text": "Holds. Flames two, Avalanche five." },
+    { "at": 9.6, "text": "Every answer carries a receipt, and one source is flagged as one." },
+    { "at": 14.4, "text": "Run on the first of November, after the window closed." } ] },
+  { "id": "s04", "D": 7.2, "items": [
+    { "at": 0, "text": "A second sport: Timberwolves one seventeen, Rockets one oh seven. The over holds." } ] },
+  { "id": "s05", "D": 12.0, "items": [
+    { "at": 0, "text": "It rejects answers about the wrong game." },
+    { "at": 4.8, "text": "Our first paid answers were about other games. Verified means unaltered, not correct." } ] },
+  { "id": "s06a", "D": 7.2, "items": [
+    { "at": 0, "text": "Game not started: too early, nothing bought." } ] },
+  { "id": "s06b", "D": 7.2, "items": [
+    { "at": 0, "text": "Not covered: it refuses, and buys nothing." } ] },
+  { "id": "s07", "D": 4.8, "items": [
+    { "at": 0, "text": "Six verdicts. Wrong has only happened in tests." } ] },
+  { "id": "s08", "D": 9.6, "items": [
+    { "at": 0, "text": "Watch lists every proposal in its challenge window, read from Polygon." } ] },
+  { "id": "s09", "D": 7.2, "items": [
+    { "at": 1.2, "text": "Read, buy, reject the wrong game, settle by arithmetic." } ] },
+  { "id": "s10", "D": 9.6, "items": [
+    { "at": 0, "text": "An outside developer added N F L and Champions League, through another team's miner." } ] },
+  { "id": "sol", "D": 14.4, "items": [
+    { "at": 0, "text": "On Solana, the venue's recorded result is treated as the proposal." },
+    { "at": 4.8, "text": "Gainsay buys the official score through Telegraph, and reads the on-chain result account." },
+    { "at": 7.2, "text": "It matches the A P I." },
+    { "at": 9.6, "text": "Fifteen Polymarket games: fourteen hold, one has no independent source, none wrong." } ] },
+  { "id": "s12", "D": 9.6, "items": [
+    { "at": 0.6, "text": "Gainsay is live, on testnet. No proposer has used it yet." } ] }
+ ]
+}

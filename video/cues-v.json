@@ -1,0 +1,206 @@
+[
+ {
+  "t": 0.492,
+  "type": "tick",
+  "vol": 0.3,
+  "pitch": 1
+ },
+ {
+  "t": 2.48,
+  "type": "whoosh",
+  "vol": 0.25,
+  "pitch": 1
+ },
+ {
+  "t": 3.003,
+  "type": "tick",
+  "vol": 0.3,
+  "pitch": 1
+ },
+ {
+  "t": 4.991,
+  "type": "whoosh",
+  "vol": 0.25,
+  "pitch": 1
+ },
+ {
+  "t": 4.992,
+  "type": "swish",
+  "vol": 0.35,
+  "pitch": 1
+ },
+ {
+  "t": 9.96,
+  "type": "whoosh",
+  "vol": 0.22,
+  "pitch": 1
+ },
+ {
+  "t": 10.226,
+  "type": "chime",
+  "vol": 0.4,
+  "pitch": 1
+ },
+ {
+  "t": 11.8,
+  "type": "whoosh",
+  "vol": 0.22,
+  "pitch": 1
+ },
+ {
+  "t": 12.026,
+  "type": "tick",
+  "vol": 0.3,
+  "pitch": 1
+ },
+ {
+  "t": 13.601,
+  "type": "whoosh",
+  "vol": 0.22,
+  "pitch": 1
+ },
+ {
+  "t": 13.825,
+  "type": "tick",
+  "vol": 0.25,
+  "pitch": 1
+ },
+ {
+  "t": 13.976,
+  "type": "tick",
+  "vol": 0.25,
+  "pitch": 1.1
+ },
+ {
+  "t": 14.2,
+  "type": "tick",
+  "vol": 0.25,
+  "pitch": 1.2
+ },
+ {
+  "t": 14.425,
+  "type": "tick",
+  "vol": 0.25,
+  "pitch": 1.3
+ },
+ {
+  "t": 15.401,
+  "type": "whoosh",
+  "vol": 0.22,
+  "pitch": 1
+ },
+ {
+  "t": 15.673,
+  "type": "click",
+  "vol": 0.35,
+  "pitch": 1
+ },
+ {
+  "t": 16.135,
+  "type": "sparkle",
+  "vol": 0.25,
+  "pitch": 1
+ },
+ {
+  "t": 17.642,
+  "type": "whoosh",
+  "vol": 0.22,
+  "pitch": 1
+ },
+ {
+  "t": 17.891,
+  "type": "tick",
+  "vol": 0.3,
+  "pitch": 0.8
+ },
+ {
+  "t": 18.168,
+  "type": "tick",
+  "vol": 0.3,
+  "pitch": 0.8
+ },
+ {
+  "t": 19.83,
+  "type": "swish",
+  "vol": 0.35,
+  "pitch": 1
+ },
+ {
+  "t": 19.832,
+  "type": "whoosh",
+  "vol": 0.2,
+  "pitch": 1
+ },
+ {
+  "t": 20.52,
+  "type": "type",
+  "vol": 0.22,
+  "pitch": 0.9
+ },
+ {
+  "t": 20.66,
+  "type": "type",
+  "vol": 0.22,
+  "pitch": 1
+ },
+ {
+  "t": 20.8,
+  "type": "type",
+  "vol": 0.22,
+  "pitch": 1.1
+ },
+ {
+  "t": 20.94,
+  "type": "type",
+  "vol": 0.22,
+  "pitch": 1.2000000000000002
+ },
+ {
+  "t": 21.08,
+  "type": "type",
+  "vol": 0.22,
+  "pitch": 0.9
+ },
+ {
+  "t": 21.22,
+  "type": "type",
+  "vol": 0.22,
+  "pitch": 1
+ },
+ {
+  "t": 21.36,
+  "type": "type",
+  "vol": 0.22,
+  "pitch": 1.1
+ },
+ {
+  "t": 22.39,
+  "type": "click",
+  "vol": 0.4,
+  "pitch": 1
+ },
+ {
+  "t": 22.96,
+  "type": "pop",
+  "vol": 0.35,
+  "pitch": 1
+ },
+ {
+  "t": 23.33,
+  "type": "tick",
+  "vol": 0.3,
+  "pitch": 1
+ },
+ {
+  "t": 24.63,
+  "type": "tick",
+  "vol": 0.3,
+  "pitch": 1
+ },
+ {
+  "t": 27.029,
+  "type": "sparkle",
+  "vol": 0.25,
+  "pitch": 1
+ }
+]
